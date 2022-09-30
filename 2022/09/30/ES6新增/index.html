@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/icon/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="变量                           新增let、const定义变量       var的缺点：  var定义的变量能够重复声明并且不会报错，容易造成冲突12var a &#x3D; 1;var b &#x3D; 2; var定义的变量可以修改，没有原生的常量概念 不支持块级作用域，var属于函数级作用域123456789101112if ( true )">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6新增">
+<meta property="og:url" content="https://onlyaaandat.github.io/2022/09/30/ES6%E6%96%B0%E5%A2%9E/index.html">
+<meta property="og:site_name" content="法棍">
+<meta property="og:description" content="变量                           新增let、const定义变量       var的缺点：  var定义的变量能够重复声明并且不会报错，容易造成冲突12var a &#x3D; 1;var b &#x3D; 2; var定义的变量可以修改，没有原生的常量概念 不支持块级作用域，var属于函数级作用域123456789101112if ( true )">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-30T07:19:46.000Z">
+<meta property="article:modified_time" content="2022-09-30T08:29:15.472Z">
+<meta property="article:author" content="法棍">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="ES6">
+<meta property="article:tag" content="新特性">
+<meta name="twitter:card" content="summary"><title>ES6新增 | 法棍</title><link ref="canonical" href="https://onlyaaandat.github.io/2022/09/30/ES6%E6%96%B0%E5%A2%9E/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: undefined,
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">ES6新增</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-30</span></span></div></header><div class="post-body">
+        <h3 id="变量"   >
+          <a href="#变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#变量" class="headerlink" title="变量"></a>变量</h3>
+      
+        <h4 id="新增let、const定义变量"   >
+          <a href="#新增let、const定义变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#新增let、const定义变量" class="headerlink" title="新增let、const定义变量"></a>新增let、const定义变量</h4>
+      <p>var的缺点：</p>
+<ol>
+<li>var定义的变量能够重复声明并且不会报错，容易造成冲突<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br></pre></td></tr></table></div></figure></li>
+<li>var定义的变量可以修改，没有原生的常量概念</li>
+<li>不支持块级作用域，var属于函数级作用域<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( <span class="literal">true</span> ) &#123; <span class="comment">// 块级作用域</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">alert</span>(a); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">A</span>(<span class="params"></span>)&#123; <span class="comment">// 函数级作用域</span></span><br><span class="line">    <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="title function_">A</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a); <span class="comment">// 报错</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure></li>
+</ol>
+<ul>
+<li>const是常量，常量命名要用大写字母，值只能定义一次不可更改</li>
+<li>let和const的区别是：let是变量可以修改，const是常量不可以修改</li>
+</ul>
+<p>let与const的相同点：</p>
+<ol>
+<li>同一个变量名不能重复声明</li>
+<li>支持块级作用域</li>
+<li>存在暂时性死区（变量要先定义才能使用）</li>
+</ol>
+
+        <h4 id="解构赋值"   >
+          <a href="#解构赋值" class="heading-link"><i class="fas fa-link"></i></a><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4>
+      <p>通过一个外部包裹的[]或者{}表示对数组或对象内部的元素进行提取或者赋值，简化操作。</p>
+<p>解构赋值注意事项：</p>
+<ol>
+<li>变量和数据要一一对应</li>
+<li>等号右侧的数据必须合法</li>
+<li>声明和赋值不呢能够分开</li>
+</ol>
+<p>用挺多的就不举例了</p>
+
+        <h3 id="函数"   >
+          <a href="#函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#函数" class="headerlink" title="函数"></a>函数</h3>
+      
+        <h4 id="箭头函数"   >
+          <a href="#箭头函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4>
+      <p>可以使用更简短的语法定义一个函数，几乎可以替代传统的函数定义function(){}</p>
+<ol>
+<li><p>箭头函数没有自己的this，他的this要根据作用域链往外部寻找上一层的this</p>
+<p> 在箭头函数出现之前，每一个新函数根据它是被如何调用的来定义这个函数的 this 值：</p>
+<ul>
+<li>如果该函数是一个构造函数，this 指针指向一个新的对象</li>
+<li>在严格模式下的函数调用下，this 指向undefined</li>
+<li>如果该函数是一个对象的方法，则它的 this 指针指向这个对象</li>
+<li>等等</li>
+</ul>
+</li>
+<li><p>箭头函数没有arguments</p>
+</li>
+<li><p>箭头函数没有super</p>
+</li>
+<li><p>箭头函数没有new.target</p>
+</li>
+<li><p>箭头函数不能用于构造函数（不能new它）</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">fn</span> = (<span class="params">a</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> a * <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">fn</span>(<span class="number">5</span>));     <span class="comment">//10</span></span><br></pre></td></tr></table></div></figure></li>
+</ol>
+
+        <h4 id="函数参数"   >
+          <a href="#函数参数" class="heading-link"><i class="fas fa-link"></i></a><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h4>
+      
+        <h5 id="rest参数（剩余参数）"   >
+          <a href="#rest参数（剩余参数）" class="heading-link"><i class="fas fa-link"></i></a><a href="#rest参数（剩余参数）" class="headerlink" title="rest参数（剩余参数）"></a>rest参数（剩余参数）</h5>
+      <p>在函数定义的形参后通过…xxx获取剩余参数</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="title function_">fn</span> = (<span class="params">a, b, ...args</span>) =&gt; &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);     <span class="comment">//1</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);     <span class="comment">//2</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(args);  <span class="comment">//[3, 4, 5]</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">fn</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></div></figure>
+
+        <h5 id="数组展开"   >
+          <a href="#数组展开" class="heading-link"><i class="fas fa-link"></i></a><a href="#数组展开" class="headerlink" title="数组展开"></a>数组展开</h5>
+      <p>展开运算符 ···数组</p>
+<p>可以用于数组的合并、拼接等情景</p>
+
+        <h3 id="数组"   >
+          <a href="#数组" class="heading-link"><i class="fas fa-link"></i></a><a href="#数组" class="headerlink" title="数组"></a>数组</h3>
+      <p>数组方法新增：</p>
+<ol>
+<li>map</li>
+<li>reduce</li>
+<li>filter</li>
+<li>forEach</li>
+</ol>
+<p>map会遍历每一个数组元素，并且往往用于建立数组元素与某些其他值的联系</p>
+<p>reduce会以一个累加器为基础，遍历并处理每一个数组元素之于累加器，reduce内部记得return以将值作用与累加器。往往用于对数组进行处理并希望得到某一个值的场景</p>
+<p>filter根据条件进行过滤，return true、false决定一个数组元素的去留</p>
+<p>forEach遍历数组，第一参数是item，第二参数是index</p>
+
+        <h3 id="字符串"   >
+          <a href="#字符串" class="heading-link"><i class="fas fa-link"></i></a><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3>
+      <p>方法新增：</p>
+<ol>
+<li>startsWith<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;https://www.baidu.com/&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">startsWith</span>(<span class="string">&quot;https://&quot;</span>));    <span class="comment">//true</span></span><br></pre></td></tr></table></div></figure></li>
+<li>endsWith<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;1.txt&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">endsWith</span>(<span class="string">&quot;.txt&quot;</span>));         <span class="comment">//true</span></span><br></pre></td></tr></table></div></figure></li>
+</ol>
+<p>模板字符串</p>
+
+        <h3 id="面向对象语法"   >
+          <a href="#面向对象语法" class="heading-link"><i class="fas fa-link"></i></a><a href="#面向对象语法" class="headerlink" title="面向对象语法"></a>面向对象语法</h3>
+      <p>class定义类<br>类内部的constructor初始化<br>内部的方法直接书写</p>
+<p>配合new创建实例对象</p>
+<p>extends替代了ES5使用原型链进行继承的操作</p>
+
+        <h3 id="json"   >
+          <a href="#json" class="heading-link"><i class="fas fa-link"></i></a><a href="#json" class="headerlink" title="json"></a>json</h3>
+      <p>JSON.stringify()将json数据转换成字符串（function等复杂的数据类型不会转换）</p>
+<p>JSON。prase()将字符串转换成json数据，字符串要严格遵守json的格式</p>
+
+        <h3 id="简写"   >
+          <a href="#简写" class="heading-link"><i class="fas fa-link"></i></a><a href="#简写" class="headerlink" title="简写"></a>简写</h3>
+      <p>对象地简写形式</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://onlyaaandat.github.io">法棍</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://onlyaaandat.github.io/2022/09/30/ES6%E6%96%B0%E5%A2%9E/">https://onlyaaandat.github.io/2022/09/30/ES6%E6%96%B0%E5%A2%9E/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://onlyaaandat.github.io/tags/javascript/">javascript</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://onlyaaandat.github.io/tags/ES6/">ES6</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://onlyaaandat.github.io/tags/%E6%96%B0%E7%89%B9%E6%80%A7/">新特性</a></span></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2022/09/30/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"><span class="paginator-prev__text">Vue生命周期</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">
+          变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%A2%9Elet%E3%80%81const%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">
+          新增let、const定义变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">1.2.</span> <span class="toc-text">
+          解构赋值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">
+          函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">
+          箭头函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">
+          函数参数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#rest%E5%8F%82%E6%95%B0%EF%BC%88%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">
+          rest参数（剩余参数）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%B1%95%E5%BC%80"><span class="toc-number">2.2.2.</span> <span class="toc-text">
+          数组展开</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">3.</span> <span class="toc-text">
+          数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.</span> <span class="toc-text">
+          字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AF%AD%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">
+          面向对象语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json"><span class="toc-number">6.</span> <span class="toc-text">
+          json</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%86%99"><span class="toc-number">7.</span> <span class="toc-text">
+          简写</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">18</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">阅读进度 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
