@@ -11,7 +11,7 @@ var CONFIG = {
   assistSearch: undefined,
   fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
   sidebar: {"offsetTop":"20px","tocMaxDepth":6},
-  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  header: undefined,
   postWidget: {"endText":true},
   nightMode: {"enable":true},
   back2top: {"enable":true},
@@ -28,7 +28,344 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">法棍</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/27/%E8%B7%A8%E5%9F%9F/">跨域</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-27</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/30/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Vue生命周期</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Vue2生命周期"   >
+          <a href="#Vue2生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vue2生命周期" class="headerlink" title="Vue2生命周期"></a>Vue2生命周期</h3>
+      <p>先看图<br><img src="https://v2.cn.vuejs.org/images/lifecycle.png" alt="Vue2生命周期"></p>
+<p>再看API</p>
+<blockquote>
+<p>所有生命周期钩子的 this 上下文将自动绑定至实例中，因此你可以访问 data、computed 和 methods。这意味着你不应该使用箭头函数来定义一个生命周期方法 (例如 created: () &#x3D;&gt; this.fetchTodos())。因为箭头函数绑定了父级上下文，所以 this 不会指向预期的组件实例，并且this.fetchTodos 将会是 undefined。</p>
+</blockquote>
+
+        <h4 id="beforeCreate"   >
+          <a href="#beforeCreate" class="heading-link"><i class="fas fa-link"></i></a><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：<br>在实例初始化之后,进行数据侦听和事件&#x2F;侦听器的配置之前同步调用。</p>
+</li>
+</ul>
+
+        <h4 id="created"   >
+          <a href="#created" class="heading-link"><i class="fas fa-link"></i></a><a href="#created" class="headerlink" title="created"></a>created</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：<br>在实例创建完成后被立即同步调用。在这一步中，实例已完成对选项的处理，意味着以下内容已被配置完毕：数据侦听、计算属性、方法、事件&#x2F;侦听器的回调函数。然而，挂载阶段还没开始，且 $el property 目前尚不可用。</p>
+</li>
+</ul>
+
+        <h4 id="beforeMount"   >
+          <a href="#beforeMount" class="heading-link"><i class="fas fa-link"></i></a><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在挂载开始之前被调用：相关的 render 函数首次被调用。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="mounted"   >
+          <a href="#mounted" class="heading-link"><i class="fas fa-link"></i></a><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。</p>
+<p>注意 mounted 不会保证所有的子组件也都被挂载完成。如果你希望等到整个视图都渲染完毕再执行某些操作，可以在 mounted 内部使用 vm.$nextTick：</p>
+<p>mounted: function () {<br>  this.$nextTick(function () {<br>    &#x2F;&#x2F; 仅在整个视图都被渲染之后才会运行的代码<br>  })<br>}</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="beforeUpdate"   >
+          <a href="#beforeUpdate" class="heading-link"><i class="fas fa-link"></i></a><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在数据发生改变后，DOM 被更新之前被调用。这里适合在现有 DOM 将要被更新之前访问它，比如移除手动添加的事件监听器。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务器端进行。</p>
+</blockquote>
+
+        <h4 id="updated"   >
+          <a href="#updated" class="heading-link"><i class="fas fa-link"></i></a><a href="#updated" class="headerlink" title="updated"></a>updated</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在数据更改导致的虚拟 DOM 重新渲染和更新完毕之后被调用。</p>
+<p>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或 watcher 取而代之。</p>
+<p>注意，updated 不会保证所有的子组件也都被重新渲染完毕。如果你希望等到整个视图都渲染完毕，可以在 updated 里使用 vm.$nextTick：</p>
+<p>updated: function () {<br>  this.$nextTick(function () {<br>    &#x2F;&#x2F;  仅在整个视图都被重新渲染之后才会运行的代码<br>  })<br>}</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="activated"   >
+          <a href="#activated" class="heading-link"><i class="fas fa-link"></i></a><a href="#activated" class="headerlink" title="activated"></a>activated</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>被 keep-alive 缓存的组件激活时调用。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="deactivated"   >
+          <a href="#deactivated" class="heading-link"><i class="fas fa-link"></i></a><a href="#deactivated" class="headerlink" title="deactivated"></a>deactivated</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>被 keep-alive 缓存的组件失活时调用。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="beforeDestroy"   >
+          <a href="#beforeDestroy" class="heading-link"><i class="fas fa-link"></i></a><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例销毁之前调用。在这一步，实例仍然完全可用。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="destroyed"   >
+          <a href="#destroyed" class="heading-link"><i class="fas fa-link"></i></a><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="errorCaptured"   >
+          <a href="#errorCaptured" class="heading-link"><i class="fas fa-link"></i></a><a href="#errorCaptured" class="headerlink" title="errorCaptured"></a>errorCaptured</h4>
+      <blockquote>
+<p>2.5.0+ 新增</p>
+</blockquote>
+<ul>
+<li><p>类型：(err: Error, vm: Component, info: string) &#x3D;&gt; ?boolean</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在捕获一个来自后代组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 false 以阻止该错误继续向上传播。</p>
+<blockquote>
+<p>你可以在此钩子中修改组件的状态。因此在捕获错误时，在模板或渲染函数中有一个条件判断来绕过其它内容就很重要；不然该组件可能会进入一个无限的渲染循环。</p>
+</blockquote>
+<p>错误传播规则</p>
+<ul>
+<li><p>默认情况下，如果全局的 config.errorHandler 被定义，所有的错误仍会发送它，因此这些错误仍然会向单一的分析服务的地方进行汇报。</p>
+</li>
+<li><p>如果一个组件的 inheritance chain (继承链)或 parent chain (父链)中存在多个 errorCaptured 钩子，则它们将会被相同的错误逐个唤起。</p>
+</li>
+<li><p>如果此 errorCaptured 钩子自身抛出了一个错误，则这个新错误和原本被捕获的错误都会发送给全局的 config.errorHandler。</p>
+</li>
+<li><p>一个 errorCaptured 钩子能够返回 false 以阻止错误继续向上传播。本质上是说“这个错误已经被搞定了且应该被忽略”。它会阻止其它任何会被这个错误唤起的 errorCaptured 钩子和全局的 config.errorHandler。</p>
+</li>
+</ul>
+
+        <h3 id="Vue父子组件生命周期执行顺序"   >
+          <a href="#Vue父子组件生命周期执行顺序" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vue父子组件生命周期执行顺序" class="headerlink" title="Vue父子组件生命周期执行顺序"></a>Vue父子组件生命周期执行顺序</h3>
+      
+        <h4 id="挂载阶段"   >
+          <a href="#挂载阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#挂载阶段" class="headerlink" title="挂载阶段"></a>挂载阶段</h4>
+      <p>执行顺序为：<br>父beforeCreate -&gt; 父created -&gt; 父beforeMount -&gt; 子beforeCreate -&gt; 子created -&gt; 子beforeMount -&gt; 子mounted -&gt; 父mounted</p>
+
+        <h4 id="更新阶段"   >
+          <a href="#更新阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h4>
+      <p>执行顺序为：<br>父beforeUpdate -&gt; 子beforeUpdate -&gt; 子updated -&gt; 父updated</p>
+
+        <h4 id="销毁阶段"   >
+          <a href="#销毁阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#销毁阶段" class="headerlink" title="销毁阶段"></a>销毁阶段</h4>
+      <p>执行顺序为：<br>父beforeDestroy -&gt; 子beforeDestroy -&gt; 子destroyed -&gt; 父destroyed</p>
+<p>规律就是：父组件先开始执行，然后等到子组件执行完，父组件收尾</p>
+
+        <h3 id="Vue3生命周期"   >
+          <a href="#Vue3生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vue3生命周期" class="headerlink" title="Vue3生命周期"></a>Vue3生命周期</h3>
+      <p><img src="https://cn.vuejs.org/assets/lifecycle.16e4c08e.png" alt="Vue3生命周期"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/30/HTML5%E3%80%81CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">HTML5、CSS3新特性</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="HTML5新特性"   >
+          <a href="#HTML5新特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#HTML5新特性" class="headerlink" title="HTML5新特性"></a>HTML5新特性</h3>
+      
+        <h4 id="新增语义化标签"   >
+          <a href="#新增语义化标签" class="heading-link"><i class="fas fa-link"></i></a><a href="#新增语义化标签" class="headerlink" title="新增语义化标签"></a>新增语义化标签</h4>
+      <p>HTML5增加了一些新的标签，新的表单，新的表单属性等。</p>
+<p>新增的带有语义化的标签：</p>
+<ul>
+<li>&lt;header&gt;:头部标签</li>
+<li>&lt;nav&gt;:导航标签</li>
+<li>&lt;article&gt;:内容标签</li>
+<li>&lt;section&gt;:定义文档某个区域</li>
+<li>&lt;aside&gt;:定义侧边栏</li>
+<li>&lt;footer&gt;:尾部标签</li>
+</ul>
+<blockquote>
+<ul>
+<li>这种语义化是针对搜索引擎的</li>
+<li>这些新标签在页面中可以使用多次</li>
+<li>在IE9中，需要把这些元素转换为块级元素</li>
+<li>更多是在移动端使用这样的标签</li>
+</ul>
+</blockquote>
+
+        <h4 id="web用户存储"   >
+          <a href="#web用户存储" class="heading-link"><i class="fas fa-link"></i></a><a href="#web用户存储" class="headerlink" title="web用户存储"></a>web用户存储</h4>
+      <p>localStorage、sessionStorage</p>
+
+        <h4 id="新增多媒体标签"   >
+          <a href="#新增多媒体标签" class="heading-link"><i class="fas fa-link"></i></a><a href="#新增多媒体标签" class="headerlink" title="新增多媒体标签"></a>新增多媒体标签</h4>
+      <p>方便嵌入音视频，不需要用flash和其他浏览器插件</p>
+<p>新增多媒体标签：</p>
+<ul>
+<li>&lt;audio src&#x3D;”文件地址” controls&#x3D;”controls”&gt; &lt;&#x2F;audio&gt;</li>
+<li>&lt;video src&#x3D;”文件地址” controls&#x3D;”controls”&gt; &lt;&#x2F;video&gt;</li>
+</ul>
+
+        <h4 id="新增input类型"   >
+          <a href="#新增input类型" class="heading-link"><i class="fas fa-link"></i></a><a href="#新增input类型" class="headerlink" title="新增input类型"></a>新增input类型</h4>
+      <ul>
+<li>type&#x3D;”email” 限制用户输入必须为Email类型</li>
+<li>type&#x3D;”url” 限制用户输入必须为URL类型</li>
+<li>type&#x3D;”date” 限制用户必须输入日期类型</li>
+<li>type&#x3D;”time” 限制用户必须输入时间类型</li>
+<li>type&#x3D;”month” 限制用户必须输入月类型</li>
+<li>type&#x3D;”week” 限制用户必须输入周类型</li>
+<li>type&#x3D;”number” 限制用户必须输入数字类型</li>
+<li>type&#x3D;”tel” 手机号码</li>
+<li>type&#x3D;”search” 搜索框</li>
+<li>type&#x3D;”color” 颜色选择表单</li>
+</ul>
+
+        <h4 id="新增表单属性"   >
+          <a href="#新增表单属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#新增表单属性" class="headerlink" title="新增表单属性"></a>新增表单属性</h4>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">require</td>
+<td align="center">require</td>
+<td align="center">表单拥有该属性表示其内容不能为空</td>
+</tr>
+<tr>
+<td align="center">placeholder</td>
+<td align="center">提示文本</td>
+<td align="center">鼠标放入表单会有文本提示，默认值为空</td>
+</tr>
+<tr>
+<td align="center">autofocus</td>
+<td align="center">autofocus</td>
+<td align="center">自动聚焦，页面加载完成后自动聚焦到指定表单</td>
+</tr>
+<tr>
+<td align="center">autocomplete</td>
+<td align="center">off\on</td>
+<td align="center">自动补全提示，用户开始键入时，浏览器基于之前的值进行提示，默认打开</td>
+</tr>
+<tr>
+<td align="center">multiple</td>
+<td align="center">multiple</td>
+<td align="center">可以多选文件提交</td>
+</tr>
+</tbody></table></div>
+<p>multiple用于type为file的表单，如果不用multiple，那么file表单只能选中本地的一个文件上传，使用multiple则可以在本地通过CTRL选中多个文件上传</p>
+
+        <h3 id="CSS3新特性"   >
+          <a href="#CSS3新特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#CSS3新特性" class="headerlink" title="CSS3新特性"></a>CSS3新特性</h3>
+      
+        <h4 id="新增选择器"   >
+          <a href="#新增选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#新增选择器" class="headerlink" title="新增选择器"></a>新增选择器</h4>
+      
+        <h5 id="属性选择器"   >
+          <a href="#属性选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h5>
+      <p><img src="https://img-blog.csdnimg.cn/e46745f5a467409d9fd18db7e7937906.png" alt="属性选择器"><br>div[name]，选中有name属性的div</p>
+<p>div[name&#x3D;”icon”]，选中name值以icon开头的div</p>
+<p>类选择器，属性选择器，伪类选择器，权重都没10 </p>
+
+        <h5 id="结构伪类选择器"   >
+          <a href="#结构伪类选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#结构伪类选择器" class="headerlink" title="结构伪类选择器"></a>结构伪类选择器</h5>
+      <p>根据文档结构来选择元素，常用于根据父级选择器选择里面的子元素</p>
+<p><img src="https://img-blog.csdnimg.cn/15d4f60fdd7a4972983875ab4a3b6908.png" alt="结构伪类选择器1"><br><img src="https://img-blog.csdnimg.cn/ec81103d85524247a772385a4745ba38.png" alt="结构伪类选择器2"></p>
+
+        <h5 id="伪元素选择器"   >
+          <a href="#伪元素选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h5>
+      <p>伪元素选择器可以利用CSS创建新标签，不需要HTML标签，从而简化HTML结构</p>
+<p><img src="https://img-blog.csdnimg.cn/1dfe896567214d4183a753257064e466.png" alt="伪元素选择器"></p>
+<p>伪元素属于行内元素，并且在文档树中是找不到的，before和after必须要有content属性</p>
+<p>伪元素选择器和标签选择器的权重都是1</p>
+
+        <h4 id="盒子模型border-box"   >
+          <a href="#盒子模型border-box" class="heading-link"><i class="fas fa-link"></i></a><a href="#盒子模型border-box" class="headerlink" title="盒子模型border-box"></a>盒子模型border-box</h4>
+      <p>border-box指定盒模型的类型，分别是:content-box、border-box</p>
+<p>content-box是标准盒模型，其width是设置content区域的宽度，而content外部另算<br>border-box是怪异盒模型，其width是设置margin内部的宽度，content会受到border等的挤压</p>
+
+        <h4 id="图片模糊"   >
+          <a href="#图片模糊" class="heading-link"><i class="fas fa-link"></i></a><a href="#图片模糊" class="headerlink" title="图片模糊"></a>图片模糊</h4>
+      <p>fliter 新增属性，用于将图片模糊或者颜色偏移等效果</p>
+
+        <h4 id="calc动态函数"   >
+          <a href="#calc动态函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#calc动态函数" class="headerlink" title="calc动态函数"></a>calc动态函数</h4>
+      <p>calc() 可以在声明css属性的时候进行一些简单的计算（太复杂会影响性能</p>
+<blockquote>
+<p>width:calc(100%-80px);</p>
+</blockquote>
+
+        <h4 id="过渡"   >
+          <a href="#过渡" class="heading-link"><i class="fas fa-link"></i></a><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h4>
+      <p>transition 过渡，是很有用的一个特性，常常和hover使用</p>
+<blockquote>
+<p>transition:要过渡的属性 花费时间(必须写且单位为s) 运动曲线(默认ease) 何时开始(默认0s);<br>transition: width 1s,height 1s;</p>
+</blockquote>
+
+        <h4 id="2D转换"   >
+          <a href="#2D转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h4>
+      <p>transform 变形</p>
+<ul>
+<li>translate 移动</li>
+<li>rotate 旋转</li>
+<li>scale 缩放</li>
+</ul>
+
+        <h4 id="动画"   >
+          <a href="#动画" class="heading-link"><i class="fas fa-link"></i></a><a href="#动画" class="headerlink" title="动画"></a>动画</h4>
+      <p>animation 动画，同样是一个很有用的特性</p>
+<p>配合@keyframes定义动画使用</p>
+
+        <h4 id="3D转换"   >
+          <a href="#3D转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h4>
+      <p>在2D的基础上加上了Z轴，也就是垂直与屏幕的一条轴线</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/27/%E8%B7%A8%E5%9F%9F/">跨域</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-27</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="跨域是什么"   >
           <a href="#跨域是什么" class="heading-link"><i class="fas fa-link"></i></a><a href="#跨域是什么" class="headerlink" title="跨域是什么"></a>跨域是什么</h3>
       <p>跨域的本质是浏览器基于同源策略的一种安全手段</p>
@@ -821,71 +1158,4 @@ express框架的CORS实现有点省略了，看看别的。</li>
 <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">curry</span>(<span class="params">func</span>) &#123; <span class="comment">// 返回一个包装器curried</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">curried</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (args.<span class="property">length</span> &gt;= func.<span class="property">length</span>) &#123; </span><br><span class="line">      <span class="keyword">return</span> func.<span class="title function_">apply</span>(<span class="variable language_">this</span>, args); </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">...args2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> curried.<span class="title function_">apply</span>(<span class="variable language_">this</span>, args.<span class="title function_">concat</span>(args2));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b, c</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> curriedSum = <span class="title function_">curry</span>(sum);</span><br><span class="line"></span><br><span class="line"><span class="title function_">alert</span>( <span class="title function_">curriedSum</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) ); <span class="comment">// 6，仍然可以被正常调用</span></span><br><span class="line"><span class="title function_">alert</span>( <span class="title function_">curriedSum</span>(<span class="number">1</span>)(<span class="number">2</span>,<span class="number">3</span>) ); <span class="comment">// 6，对第一个参数的柯里化</span></span><br><span class="line"><span class="title function_">alert</span>( <span class="title function_">curriedSum</span>(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>) ); <span class="comment">// 6，全柯里化</span></span><br></pre></td></tr></table></div></figure>
 
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/21/Promise%E5%89%8D%E7%BD%AE%E5%89%A7%E6%83%85/">Promise前置剧情</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-22</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="Promise前置剧情"   >
-          <a href="#Promise前置剧情" class="heading-link"><i class="fas fa-link"></i></a><a href="#Promise前置剧情" class="headerlink" title="Promise前置剧情"></a>Promise前置剧情</h2>
-      
-        <h3 id="迭代器"   >
-          <a href="#迭代器" class="heading-link"><i class="fas fa-link"></i></a><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3>
-      <p>迭代器，或者说迭代器模式：<br>是指从目标源依次逐个抽取的方式来提取数据<br>对于可迭代的目标源，应该：</p>
-<ol>
-<li>有序</li>
-<li>连续</li>
-</ol>
-<blockquote>
-<p>目标源的有序连续通常以索引的形式展现，即使是map等数据结构也有索引（console.log一下可以看到）</p>
-</blockquote>
-<p>而遍历通常指的是一种通用的达到访问每一个元素的效果的方式。</p>
-<p>不同的数据类型会有不同的遍历方法，例如：</p>
-<ol>
-<li>for循环可以遍历数组、字符串</li>
-<li>forEach可以遍历数组</li>
-<li>for in可以遍历对象</li>
-<li>for of可以遍历数组和字符串</li>
-</ol>
-<p>较多的遍历方法容易造成混乱，希望对Array、Map、Set、String、TypeArray、arguments对象、NodeList进行统一的写法进行遍历，因此有了迭代器。</p>
-<p>以上遍历可以通过for of进行遍历，但Object不可以用for of，因为对象上没有Symbol.interator方法。假如原型上有Symbol.interator，则可以用for of遍历。</p>
-<p>对于迭代器对象方法，可以使用.next()进行迭代，会有{value,done}，value表示元素，done表示当前迭代的值和是否完成迭代</p>
-<blockquote>
-<p>map和对象的区别，map的键值可以是对象，而对象的键值只能是字符串</p>
-</blockquote>
-
-        <h3 id="生成器"   >
-          <a href="#生成器" class="heading-link"><i class="fas fa-link"></i></a><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3>
-      <p>生成器用于生成迭代器对象，因为Object没有迭代器对象，但又希望它拥有，因此会有生成器用于生成迭代器。</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">test</span>(<span class="params"></span>)&#123; <span class="comment">// 写上*号就是一个生成器函数</span></span><br><span class="line">    <span class="comment">// yield:产出</span></span><br><span class="line">    <span class="attr">yield</span>:<span class="number">1</span>; <span class="comment">// yield表示每次迭代(.next())要被抽取的元素</span></span><br><span class="line">    <span class="attr">yield</span>:<span class="number">2</span>;</span><br><span class="line">    <span class="attr">yield</span>:<span class="number">3</span>;</span><br><span class="line">    <span class="attr">yield</span>:<span class="number">4</span>;</span><br><span class="line">    <span class="attr">yield</span>:<span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> iter = <span class="title function_">test</span>() <span class="comment">// test执行后，返回一个迭代器对象</span></span><br><span class="line">iter.<span class="title function_">next</span>() <span class="comment">// 1</span></span><br><span class="line">iter.<span class="title function_">next</span>() <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 此时也可以用for of遍历得到value（for of就是遍历出value的）</span></span><br></pre></td></tr></table></div></figure>
-
-<p>~~~ 未完待续</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/21/%E6%8E%92%E5%BA%8F/">排序</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-22</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="选择排序"   >
-          <a href="#选择排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3>
-      <p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。<br>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。<br>重复第二步，直到所有元素均排序完毕。</p>
-<p>时间复杂度：最好O(n)，平均O(n<sup>2</sup>)，最坏O(n<sup>2</sup>)</p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="selectionSort"></p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">selectionSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> minIndex = <span class="number">0</span> <span class="comment">// 标记下标</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i&lt;arr.<span class="property">length</span>; i++)&#123; <span class="comment">// 获取数组的每一项，控制循环次数</span></span><br><span class="line">        minIndex = i</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i+<span class="number">1</span>;j&lt;arr.<span class="property">length</span>;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[minIndex]&gt;arr[j])&#123;</span><br><span class="line">                minIndex = j</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 避免自己和自己交换</span></span><br><span class="line">        <span class="keyword">if</span>(minIndex!==i)&#123;</span><br><span class="line">            [arr[minIndex],arr[i]]=[arr[i],arr[minIndex]]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">selectionSort</span>([<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]))</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="冒泡排序"   >
-          <a href="#冒泡排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3>
-      <p>比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。<br>针对所有的元素重复以上的步骤，除了最后一个。<br>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<p>时间复杂度：最好O(n)，平均O(n<sup>2</sup>)，最坏O(n<sup>2</sup>)</p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="bubblesort"></p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">bubbleSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;<span class="comment">// 循环轮数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>; j&lt;arr.<span class="property">length</span>-<span class="number">1</span>-i;j++)&#123; <span class="comment">// 对比次数,i表示已经有序的数组元素个数</span></span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                [arr[j],arr[j+<span class="number">1</span>]]=[arr[j+<span class="number">1</span>],arr[j]]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">bubbleSort</span>([<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]))</span><br></pre></td></tr></table></div></figure>
-
-        <h3 id="插入排序"   >
-          <a href="#插入排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3>
-      <p>从第二个数开始，向前比较<br>如果这个数大，就往后排<br>如此类推进行到最后一个数</p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="insertionSort"></p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">insertionSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> temp = arr[i] <span class="comment">// 记住当前一轮的首位元素是什么</span></span><br><span class="line">        <span class="keyword">let</span> j=i</span><br><span class="line">        <span class="keyword">while</span> (j&gt;<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 如果当前元素小于前一个元素，就会往后逐步移动</span></span><br><span class="line">            <span class="keyword">if</span>(arr[j-<span class="number">1</span>]&gt;temp)&#123;</span><br><span class="line">                arr[j]=arr[j-<span class="number">1</span>]</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">            j--</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 因为动了元素，所以赋值回当前元素</span></span><br><span class="line">        arr[j]=temp</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">insertionSort</span>([<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]))</span><br></pre></td></tr></table></div></figure>
-
-        <h3 id="归并排序"   >
-          <a href="#归并排序" class="heading-link"><i class="fas fa-link"></i></a><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3>
-      <p>分：把数组分成多份，再递归地对子数组进行分的操作，直到分成一个个单独的数<br>合：把两个数合并为有序数组，再对有序数组进行合并，直到子数组全部合并成一个完整的数组</p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif" alt="mergeSort"></p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">mergeSort</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 递归终点</span></span><br><span class="line">    <span class="keyword">if</span>(arr.<span class="property">length</span> === <span class="number">1</span>) <span class="keyword">return</span> arr</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取中间索引</span></span><br><span class="line">    <span class="keyword">const</span> mid = arr.<span class="property">length</span> &gt;&gt; <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 通过中间下标，进行分割数组</span></span><br><span class="line">    <span class="keyword">const</span> left = arr.<span class="title function_">slice</span>(<span class="number">0</span>,mid)</span><br><span class="line">    <span class="keyword">const</span> right = arr.<span class="title function_">slice</span>(mid)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 左边和右边的数组进行递归，得到有序的左数组和有序的右数组</span></span><br><span class="line">    <span class="keyword">const</span> orderLeft = <span class="title function_">mergeSort</span>(left)</span><br><span class="line">    <span class="keyword">const</span> orderRight = <span class="title function_">mergeSort</span>(right)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 存放结果的数组</span></span><br><span class="line">    <span class="keyword">const</span> res = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(orderLeft.<span class="property">length</span> || orderRight.<span class="property">length</span>)&#123;</span><br><span class="line">        <span class="comment">// 如左边和右边的数组都有值</span></span><br><span class="line">        <span class="keyword">if</span>(orderLeft.<span class="property">length</span> &amp;&amp; orderRight.<span class="property">length</span>)&#123;</span><br><span class="line">            <span class="comment">// 左边队头的值小于右边队头的值，则左队头出队，否则右队头出队</span></span><br><span class="line">            res.<span class="title function_">push</span>(orderLeft[<span class="number">0</span>]&lt;orderRight[<span class="number">0</span>]?orderLeft.<span class="title function_">shift</span>():orderRight.<span class="title function_">shift</span>())</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(orderLeft.<span class="property">length</span>)&#123;</span><br><span class="line">            res.<span class="title function_">push</span>(orderLeft.<span class="title function_">shift</span>())</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(orderRight.<span class="property">length</span>)&#123;</span><br><span class="line">            res.<span class="title function_">push</span>(orderRight.<span class="title function_">shift</span>())</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">mergeSort</span>([<span class="number">5</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">12</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">45</span>,<span class="number">7</span>]))</span><br></pre></td></tr></table></div></figure>
-
-<pre><code class="未完待续">
-
-
-</code></pre>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">15</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">21</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">25</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
