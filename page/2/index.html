@@ -28,7 +28,137 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/21/%E9%9A%8F%E7%AC%94%EF%BC%88%E4%B8%80%EF%BC%89%E6%9F%AF%E9%87%8C%E5%8C%96%E7%9B%B8%E5%85%B3/">随笔（一）柯里化相关</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-22</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/23/Vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/">Vue组件间通信</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-23</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Vue组件间通信的分类"   >
+          <a href="#Vue组件间通信的分类" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vue组件间通信的分类" class="headerlink" title="Vue组件间通信的分类"></a>Vue组件间通信的分类</h3>
+      <ul>
+<li>父子组件之间的通信</li>
+<li>兄弟组件之间的通信</li>
+<li>祖孙与后代组件之间的通信</li>
+<li>非关系组件之间的通信</li>
+</ul>
+<p><img src="https://static.vue-js.com/85b92400-3aca-11eb-ab90-d9ae814b240d.png" alt="tree"></p>
+
+        <h3 id="组件间通信的方案"   >
+          <a href="#组件间通信的方案" class="heading-link"><i class="fas fa-link"></i></a><a href="#组件间通信的方案" class="headerlink" title="组件间通信的方案"></a>组件间通信的方案</h3>
+      <p>常规的通信方案有8种</p>
+<ol>
+<li>props传参</li>
+<li>$emit触发自定义事件</li>
+<li>ref获取某一结点</li>
+<li>EventBus</li>
+<li>$parent或$root</li>
+<li>attrs与listeners</li>
+<li>Provide与Inject</li>
+<li>Vuex</li>
+</ol>
+
+        <h4 id="props传递数据"   >
+          <a href="#props传递数据" class="heading-link"><i class="fas fa-link"></i></a><a href="#props传递数据" class="headerlink" title="props传递数据"></a>props传递数据</h4>
+      <ul>
+<li>适用场景：父组件传递数据给子组件</li>
+<li>子组件中设置props属性，定义并接受父组件传递过来的参数</li>
+<li>父组件在使用子组件标签中通过字面量来传递值</li>
+</ul>
+<p><code>children.vue</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">props</span>:&#123;  </span><br><span class="line">    <span class="comment">// 字符串形式  </span></span><br><span class="line">    <span class="attr">name</span>:<span class="title class_">String</span>, <span class="comment">// 接收的类型参数 </span></span><br><span class="line">    <span class="comment">// 对象形式  </span></span><br><span class="line">    <span class="attr">age</span>:&#123;    </span><br><span class="line">        <span class="attr">type</span>:<span class="title class_">Number</span>, <span class="comment">// 接收的类型为数值  </span></span><br><span class="line">        <span class="attr">defaule</span>:<span class="number">18</span>,  <span class="comment">// 默认值为18  </span></span><br><span class="line">        <span class="attr">require</span>:<span class="literal">true</span> <span class="comment">// age属性必须传递  </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></div></figure>
+
+<p><code>father.vue</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Children</span> name=<span class="string">&quot;jack&quot;</span> age=<span class="number">18</span> /&gt;  </span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="emit触发自定义事件"   >
+          <a href="#emit触发自定义事件" class="heading-link"><i class="fas fa-link"></i></a><a href="#emit触发自定义事件" class="headerlink" title="$emit触发自定义事件"></a>$emit触发自定义事件</h4>
+      <ul>
+<li>适用场景：子组件传递数据给父组件</li>
+<li>子组件通过$emit触发自定义事件，$emit第二个参数为传递的数值</li>
+<li>父组件绑定监听器获取子组件传递过来的参数</li>
+</ul>
+<p><code>children.vue</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.$emit(<span class="string">&#x27;add&#x27;</span>, good)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>father.vue</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Children</span> @add=<span class="string">&quot;cartAdd($event)&quot;</span> /&gt; <span class="comment">// @是v-on的简写，@后的是自定义事件的名称</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="ref获取某一结点"   >
+          <a href="#ref获取某一结点" class="heading-link"><i class="fas fa-link"></i></a><a href="#ref获取某一结点" class="headerlink" title="ref获取某一结点"></a>ref获取某一结点</h4>
+      <ul>
+<li>父组件在使用子组件的时候设置ref</li>
+<li>父组件通过设置子组件ref来获取数据</li>
+</ul>
+<p><code>father.vue</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Children</span> ref=<span class="string">&quot;foo&quot;</span> /&gt;  </span><br><span class="line">  </span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">foo</span>  <span class="comment">// 获取子组件实例，通过子组件实例我们就能拿到对应的数据 </span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="EventBus"   >
+          <a href="#EventBus" class="heading-link"><i class="fas fa-link"></i></a><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h4>
+      <ul>
+<li>使用场景：兄弟组件传值</li>
+<li>创建一个中央事件总线EventBus</li>
+<li>兄弟组件通过$emit触发自定义事件，$emit第二个参数为传递的数值</li>
+<li>另一个兄弟组件通过$on监听自定义事件</li>
+</ul>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个中央时间总线类  </span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bus</span> &#123;  </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;  </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">callbacks</span> = &#123;&#125;;   <span class="comment">// 存放事件的名字  </span></span><br><span class="line">  &#125;  </span><br><span class="line">  $on(name, fn) &#123;  </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">callbacks</span>[name] = <span class="variable language_">this</span>.<span class="property">callbacks</span>[name] || [];  </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">callbacks</span>[name].<span class="title function_">push</span>(fn);  </span><br><span class="line">  &#125;  </span><br><span class="line">  $emit(name, args) &#123;  </span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">callbacks</span>[name]) &#123;  </span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">callbacks</span>[name].<span class="title function_">forEach</span>(<span class="function">(<span class="params">cb</span>) =&gt;</span> <span class="title function_">cb</span>(args));  </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// main.js  </span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$bus</span> = <span class="keyword">new</span> <span class="title class_">Bus</span>() <span class="comment">// 将$bus挂载到vue实例的原型上  </span></span><br><span class="line"><span class="comment">// 另一种方式  </span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$bus</span> = <span class="keyword">new</span> <span class="title class_">Vue</span>() <span class="comment">// Vue已经实现了Bus的功能  </span></span><br></pre></td></tr></table></div></figure>
+
+<p><code>children1.vue</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$bus</span>.$emit(<span class="string">&#x27;foo&#x27;</span>)</span><br></pre></td></tr></table></div></figure>
+
+<p><code>children2.vue</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$bus</span>.$on(<span class="string">&#x27;foo&#x27;</span>, <span class="variable language_">this</span>.<span class="property">handle</span>)</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="parent或-root"   >
+          <a href="#parent或-root" class="heading-link"><i class="fas fa-link"></i></a><a href="#parent或-root" class="headerlink" title="$parent或$root"></a>$parent或$root</h4>
+      <ul>
+<li>通过共同祖辈$parent或者$root搭建通信桥连接</li>
+</ul>
+<p>兄弟组件<br><code>this.$parent.on(&#39;add&#39;,this.add)</code></p>
+<p>另一个兄弟组件<br><code>this.$parent.emit(&#39;add&#39;)</code></p>
+
+        <h4 id="attrs与-listeners"   >
+          <a href="#attrs与-listeners" class="heading-link"><i class="fas fa-link"></i></a><a href="#attrs与-listeners" class="headerlink" title="$attrs与$listeners"></a>$attrs与$listeners</h4>
+      <p>$attrs是组件实例对象上的一个属性，可以获取到父组件传递过来的props数据，如果子组件通过props接收属性，那么$attrs上是获取不到的。</p>
+<p>$listeners是组件实例对象上的一个属性，可以获取到父组件传递过来的自定义事件，可以通过v-on全称来统一绑定，不能简写。</p>
+<ul>
+<li>适用场景：祖先传递数据给子孙</li>
+<li>设置批量向下传属性$attrs和$listeners</li>
+<li>包含了父级作用域中不作为prop被识别(且获取)的特性绑定（class和style除外）</li>
+<li>可以通过v-bind&#x3D;”attrs”传入内部组件</li>
+</ul>
+<p>下面案例可能看的会有点懵</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// child：并未在props中声明foo  </span></span><br><span class="line">&lt;p&gt;&#123;&#123;$attrs.<span class="property">foo</span>&#125;&#125;&lt;/p&gt;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// parent  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">HelloWorld</span> <span class="attr">foo</span>=<span class="string">&quot;foo&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></div></figure>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给Grandson隔代传值，communication/index.vue  </span></span><br><span class="line">&lt;<span class="title class_">Child2</span> msg=<span class="string">&quot;lalala&quot;</span> @some-event=<span class="string">&quot;onSomeEvent&quot;</span>&gt;&lt;/<span class="title class_">Child2</span>&gt;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// Child2做展开，v-bind可以将$attrs中的所有数据绑定在标签上作为props传递给子组件，并且不能用:简写</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">Grandson</span> <span class="attr">v-bind</span>=<span class="string">&quot;$attrs&quot;</span> <span class="attr">v-on</span>=<span class="string">&quot;$listeners&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Grandson</span>&gt;</span></span>  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// Grandson使⽤  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">&quot;$emit(&#x27;some-event&#x27;, &#x27;msg from grandson&#x27;)&quot;</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml">&#123;&#123;msg&#125;&#125;  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> </span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="Provide与inject"   >
+          <a href="#Provide与inject" class="heading-link"><i class="fas fa-link"></i></a><a href="#Provide与inject" class="headerlink" title="Provide与inject"></a>Provide与inject</h4>
+      <ul>
+<li>在祖先组件定义provide属性，返回传递的值</li>
+<li>在后代组件通过inject接收组件传递过来的值</li>
+</ul>
+<p><code>祖先组件</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">provide</span>(<span class="params"></span>)&#123;  </span><br><span class="line">    <span class="keyword">return</span> &#123;  </span><br><span class="line">        <span class="attr">foo</span>:<span class="string">&#x27;foo&#x27;</span>  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p><code>后代组件</code></p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">inject</span>:[<span class="string">&#x27;foo&#x27;</span>] <span class="comment">// 获取到祖先组件传递过来的值  </span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="Vuex"   >
+          <a href="#Vuex" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h4>
+      <ul>
+<li>适用场景：复杂关系的组件数据传递</li>
+<li>Vuex相当于一个用来存储共享变量的容器</li>
+</ul>
+<p><img src="https://static.vue-js.com/fa207cd0-3aca-11eb-ab90-d9ae814b240d.png" alt="Vuex"></p>
+<ul>
+<li><code>state</code>用来存放共享变量的地方</li>
+<li><code>getter</code>相当于<code>store</code>中的计算属性，用来获得共享变量的值</li>
+<li><code>mutations</code>用来存放修改<code>state</code>的方法</li>
+<li><code>action</code> 也是用来存放修改<code>state</code>的方法，不过<code>action</code>是在&#96;&#96;</li>
+<li><code>module</code> 也是一个Vuex的核心概念，用来模块化的</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/21/%E9%9A%8F%E7%AC%94%EF%BC%88%E4%B8%80%EF%BC%89%E6%9F%AF%E9%87%8C%E5%8C%96%E7%9B%B8%E5%85%B3/">随笔（一）柯里化相关</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-22</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="柯里化前置剧情"   >
           <a href="#柯里化前置剧情" class="heading-link"><i class="fas fa-link"></i></a><a href="#柯里化前置剧情" class="headerlink" title="柯里化前置剧情"></a>柯里化前置剧情</h3>
       
@@ -710,4 +840,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></he
           <a href="#部署到远程站点" class="heading-link"><i class="fas fa-link"></i></a><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3>
       <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
 <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></div></figure>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">18</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">19</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
