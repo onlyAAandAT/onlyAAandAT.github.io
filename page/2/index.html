@@ -28,7 +28,189 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/30/HTML5%E3%80%81CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">HTML5、CSS3新特性</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/30/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">Vue生命周期</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Vue2生命周期"   >
+          <a href="#Vue2生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vue2生命周期" class="headerlink" title="Vue2生命周期"></a>Vue2生命周期</h3>
+      <p>先看图<br><img src="https://v2.cn.vuejs.org/images/lifecycle.png" alt="Vue2生命周期"></p>
+<p>再看API</p>
+<blockquote>
+<p>所有生命周期钩子的 this 上下文将自动绑定至实例中，因此你可以访问 data、computed 和 methods。这意味着你不应该使用箭头函数来定义一个生命周期方法 (例如 created: () &#x3D;&gt; this.fetchTodos())。因为箭头函数绑定了父级上下文，所以 this 不会指向预期的组件实例，并且this.fetchTodos 将会是 undefined。</p>
+</blockquote>
+
+        <h4 id="beforeCreate"   >
+          <a href="#beforeCreate" class="heading-link"><i class="fas fa-link"></i></a><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：<br>在实例初始化之后,进行数据侦听和事件&#x2F;侦听器的配置之前同步调用。</p>
+</li>
+</ul>
+
+        <h4 id="created"   >
+          <a href="#created" class="heading-link"><i class="fas fa-link"></i></a><a href="#created" class="headerlink" title="created"></a>created</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：<br>在实例创建完成后被立即同步调用。在这一步中，实例已完成对选项的处理，意味着以下内容已被配置完毕：数据侦听、计算属性、方法、事件&#x2F;侦听器的回调函数。然而，挂载阶段还没开始，且 $el property 目前尚不可用。</p>
+</li>
+</ul>
+
+        <h4 id="beforeMount"   >
+          <a href="#beforeMount" class="heading-link"><i class="fas fa-link"></i></a><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在挂载开始之前被调用：相关的 render 函数首次被调用。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="mounted"   >
+          <a href="#mounted" class="heading-link"><i class="fas fa-link"></i></a><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。</p>
+<p>注意 mounted 不会保证所有的子组件也都被挂载完成。如果你希望等到整个视图都渲染完毕再执行某些操作，可以在 mounted 内部使用 vm.$nextTick：</p>
+<p>mounted: function () {<br>  this.$nextTick(function () {<br>    &#x2F;&#x2F; 仅在整个视图都被渲染之后才会运行的代码<br>  })<br>}</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="beforeUpdate"   >
+          <a href="#beforeUpdate" class="heading-link"><i class="fas fa-link"></i></a><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在数据发生改变后，DOM 被更新之前被调用。这里适合在现有 DOM 将要被更新之前访问它，比如移除手动添加的事件监听器。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务器端进行。</p>
+</blockquote>
+
+        <h4 id="updated"   >
+          <a href="#updated" class="heading-link"><i class="fas fa-link"></i></a><a href="#updated" class="headerlink" title="updated"></a>updated</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在数据更改导致的虚拟 DOM 重新渲染和更新完毕之后被调用。</p>
+<p>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或 watcher 取而代之。</p>
+<p>注意，updated 不会保证所有的子组件也都被重新渲染完毕。如果你希望等到整个视图都渲染完毕，可以在 updated 里使用 vm.$nextTick：</p>
+<p>updated: function () {<br>  this.$nextTick(function () {<br>    &#x2F;&#x2F;  仅在整个视图都被重新渲染之后才会运行的代码<br>  })<br>}</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="activated"   >
+          <a href="#activated" class="heading-link"><i class="fas fa-link"></i></a><a href="#activated" class="headerlink" title="activated"></a>activated</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>被 keep-alive 缓存的组件激活时调用。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="deactivated"   >
+          <a href="#deactivated" class="heading-link"><i class="fas fa-link"></i></a><a href="#deactivated" class="headerlink" title="deactivated"></a>deactivated</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>被 keep-alive 缓存的组件失活时调用。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="beforeDestroy"   >
+          <a href="#beforeDestroy" class="heading-link"><i class="fas fa-link"></i></a><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例销毁之前调用。在这一步，实例仍然完全可用。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="destroyed"   >
+          <a href="#destroyed" class="heading-link"><i class="fas fa-link"></i></a><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h4>
+      <ul>
+<li><p>类型：Function</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。</p>
+<blockquote>
+<p>该钩子在服务器端渲染期间不被调用。</p>
+</blockquote>
+
+        <h4 id="errorCaptured"   >
+          <a href="#errorCaptured" class="heading-link"><i class="fas fa-link"></i></a><a href="#errorCaptured" class="headerlink" title="errorCaptured"></a>errorCaptured</h4>
+      <blockquote>
+<p>2.5.0+ 新增</p>
+</blockquote>
+<ul>
+<li><p>类型：(err: Error, vm: Component, info: string) &#x3D;&gt; ?boolean</p>
+</li>
+<li><p>详细：</p>
+</li>
+</ul>
+<p>在捕获一个来自后代组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 false 以阻止该错误继续向上传播。</p>
+<blockquote>
+<p>你可以在此钩子中修改组件的状态。因此在捕获错误时，在模板或渲染函数中有一个条件判断来绕过其它内容就很重要；不然该组件可能会进入一个无限的渲染循环。</p>
+</blockquote>
+<p>错误传播规则</p>
+<ul>
+<li><p>默认情况下，如果全局的 config.errorHandler 被定义，所有的错误仍会发送它，因此这些错误仍然会向单一的分析服务的地方进行汇报。</p>
+</li>
+<li><p>如果一个组件的 inheritance chain (继承链)或 parent chain (父链)中存在多个 errorCaptured 钩子，则它们将会被相同的错误逐个唤起。</p>
+</li>
+<li><p>如果此 errorCaptured 钩子自身抛出了一个错误，则这个新错误和原本被捕获的错误都会发送给全局的 config.errorHandler。</p>
+</li>
+<li><p>一个 errorCaptured 钩子能够返回 false 以阻止错误继续向上传播。本质上是说“这个错误已经被搞定了且应该被忽略”。它会阻止其它任何会被这个错误唤起的 errorCaptured 钩子和全局的 config.errorHandler。</p>
+</li>
+</ul>
+
+        <h3 id="Vue父子组件生命周期执行顺序"   >
+          <a href="#Vue父子组件生命周期执行顺序" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vue父子组件生命周期执行顺序" class="headerlink" title="Vue父子组件生命周期执行顺序"></a>Vue父子组件生命周期执行顺序</h3>
+      
+        <h4 id="挂载阶段"   >
+          <a href="#挂载阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#挂载阶段" class="headerlink" title="挂载阶段"></a>挂载阶段</h4>
+      <p>执行顺序为：<br>父beforeCreate -&gt; 父created -&gt; 父beforeMount -&gt; 子beforeCreate -&gt; 子created -&gt; 子beforeMount -&gt; 子mounted -&gt; 父mounted</p>
+
+        <h4 id="更新阶段"   >
+          <a href="#更新阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#更新阶段" class="headerlink" title="更新阶段"></a>更新阶段</h4>
+      <p>执行顺序为：<br>父beforeUpdate -&gt; 子beforeUpdate -&gt; 子updated -&gt; 父updated</p>
+
+        <h4 id="销毁阶段"   >
+          <a href="#销毁阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#销毁阶段" class="headerlink" title="销毁阶段"></a>销毁阶段</h4>
+      <p>执行顺序为：<br>父beforeDestroy -&gt; 子beforeDestroy -&gt; 子destroyed -&gt; 父destroyed</p>
+<p>规律就是：父组件先开始执行，然后等到子组件执行完，父组件收尾</p>
+
+        <h3 id="Vue3生命周期"   >
+          <a href="#Vue3生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vue3生命周期" class="headerlink" title="Vue3生命周期"></a>Vue3生命周期</h3>
+      <p><img src="https://cn.vuejs.org/assets/lifecycle.16e4c08e.png" alt="Vue3生命周期"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/30/HTML5%E3%80%81CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">HTML5、CSS3新特性</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-30</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-30</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="HTML5新特性"   >
           <a href="#HTML5新特性" class="heading-link"><i class="fas fa-link"></i></a><a href="#HTML5新特性" class="headerlink" title="HTML5新特性"></a>HTML5新特性</h3>
       
@@ -976,39 +1158,4 @@ express框架的CORS实现有点省略了，看看别的。</li>
 <figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">curry</span>(<span class="params">func</span>) &#123; <span class="comment">// 返回一个包装器curried</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">curried</span>(<span class="params">...args</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (args.<span class="property">length</span> &gt;= func.<span class="property">length</span>) &#123; </span><br><span class="line">      <span class="keyword">return</span> func.<span class="title function_">apply</span>(<span class="variable language_">this</span>, args); </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">...args2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> curried.<span class="title function_">apply</span>(<span class="variable language_">this</span>, args.<span class="title function_">concat</span>(args2));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sum</span>(<span class="params">a, b, c</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> curriedSum = <span class="title function_">curry</span>(sum);</span><br><span class="line"></span><br><span class="line"><span class="title function_">alert</span>( <span class="title function_">curriedSum</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) ); <span class="comment">// 6，仍然可以被正常调用</span></span><br><span class="line"><span class="title function_">alert</span>( <span class="title function_">curriedSum</span>(<span class="number">1</span>)(<span class="number">2</span>,<span class="number">3</span>) ); <span class="comment">// 6，对第一个参数的柯里化</span></span><br><span class="line"><span class="title function_">alert</span>( <span class="title function_">curriedSum</span>(<span class="number">1</span>)(<span class="number">2</span>)(<span class="number">3</span>) ); <span class="comment">// 6，全柯里化</span></span><br></pre></td></tr></table></div></figure>
 
 
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/09/21/Promise%E5%89%8D%E7%BD%AE%E5%89%A7%E6%83%85/">Promise前置剧情</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-21</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-09</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h2 id="Promise前置剧情"   >
-          <a href="#Promise前置剧情" class="heading-link"><i class="fas fa-link"></i></a><a href="#Promise前置剧情" class="headerlink" title="Promise前置剧情"></a>Promise前置剧情</h2>
-      
-        <h3 id="迭代器"   >
-          <a href="#迭代器" class="heading-link"><i class="fas fa-link"></i></a><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3>
-      <p>迭代器，或者说迭代器模式：<br>是指从目标源依次逐个抽取的方式来提取数据<br>对于可迭代的目标源，应该：</p>
-<ol>
-<li>有序</li>
-<li>连续</li>
-</ol>
-<blockquote>
-<p>目标源的有序连续通常以索引的形式展现，即使是map等数据结构也有索引（console.log一下可以看到）</p>
-</blockquote>
-<p>而遍历通常指的是一种通用的达到访问每一个元素的效果的方式。</p>
-<p>不同的数据类型会有不同的遍历方法，例如：</p>
-<ol>
-<li>for循环可以遍历数组、字符串</li>
-<li>forEach可以遍历数组</li>
-<li>for in可以遍历对象</li>
-<li>for of可以遍历数组和字符串</li>
-</ol>
-<p>较多的遍历方法容易造成混乱，希望对Array、Map、Set、String、TypeArray、arguments对象、NodeList进行统一的写法进行遍历，因此有了迭代器。</p>
-<p>以上遍历可以通过for of进行遍历，但Object不可以用for of，因为对象上没有Symbol.interator方法。假如原型上有Symbol.interator，则可以用for of遍历。</p>
-<p>对于迭代器对象方法，可以使用.next()进行迭代，会有{value,done}，value表示元素，done表示当前迭代的值和是否完成迭代</p>
-<blockquote>
-<p>map和对象的区别，map的键值可以是对象，而对象的键值只能是字符串</p>
-</blockquote>
-
-        <h3 id="生成器"   >
-          <a href="#生成器" class="heading-link"><i class="fas fa-link"></i></a><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3>
-      <p>生成器用于生成迭代器对象，因为Object没有迭代器对象，但又希望它拥有，因此会有生成器用于生成迭代器。</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">test</span>(<span class="params"></span>)&#123; <span class="comment">// 写上*号就是一个生成器函数</span></span><br><span class="line">    <span class="comment">// yield:产出</span></span><br><span class="line">    <span class="attr">yield</span>:<span class="number">1</span>; <span class="comment">// yield表示每次迭代(.next())要被抽取的元素</span></span><br><span class="line">    <span class="attr">yield</span>:<span class="number">2</span>;</span><br><span class="line">    <span class="attr">yield</span>:<span class="number">3</span>;</span><br><span class="line">    <span class="attr">yield</span>:<span class="number">4</span>;</span><br><span class="line">    <span class="attr">yield</span>:<span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> iter = <span class="title function_">test</span>() <span class="comment">// test执行后，返回一个迭代器对象</span></span><br><span class="line">iter.<span class="title function_">next</span>() <span class="comment">// 1</span></span><br><span class="line">iter.<span class="title function_">next</span>() <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 此时也可以用for of遍历得到value（for of就是遍历出value的）</span></span><br></pre></td></tr></table></div></figure>
-
-<p>~~~ 未完待续</p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">26</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">22</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">27</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
