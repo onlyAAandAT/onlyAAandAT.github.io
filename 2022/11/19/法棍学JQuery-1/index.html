@@ -1,0 +1,338 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/icon/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="JQuery有啥好的       JQuery简化了JavaScript中的许多复杂内容，例如AJAX调用和DOM操作。 JQuery库包含以下功能：  HTML &#x2F; DOM操作 CSS操作 事件处理 效果和动画 AJAX支持 实用工具(Utilities) 插件(Plugins) 跨浏览器支持  JQuery可以：  轻松选择元素 轻松更改元素的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="法棍学JQuery-1">
+<meta property="og:url" content="https://onlyaaandat.github.io/2022/11/19/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-1/index.html">
+<meta property="og:site_name" content="法棍">
+<meta property="og:description" content="JQuery有啥好的       JQuery简化了JavaScript中的许多复杂内容，例如AJAX调用和DOM操作。 JQuery库包含以下功能：  HTML &#x2F; DOM操作 CSS操作 事件处理 效果和动画 AJAX支持 实用工具(Utilities) 插件(Plugins) 跨浏览器支持  JQuery可以：  轻松选择元素 轻松更改元素的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-19T07:41:37.000Z">
+<meta property="article:modified_time" content="2022-11-19T09:24:37.541Z">
+<meta property="article:author" content="法棍">
+<meta property="article:tag" content="80岁老奶奶用脚过的教程">
+<meta property="article:tag" content="JQuery">
+<meta name="twitter:card" content="summary"><title>法棍学JQuery-1 | 法棍</title><link ref="canonical" href="https://onlyaaandat.github.io/2022/11/19/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-1/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: undefined,
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">法棍学JQuery-1</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-19</span></span></div></header><div class="post-body">
+        <h3 id="JQuery有啥好的"   >
+          <a href="#JQuery有啥好的" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery有啥好的" class="headerlink" title="JQuery有啥好的"></a>JQuery有啥好的</h3>
+      <p>JQuery简化了JavaScript中的许多复杂内容，例如AJAX调用和DOM操作。</p>
+<p>JQuery库包含以下功能：</p>
+<ul>
+<li>HTML &#x2F; DOM操作</li>
+<li>CSS操作</li>
+<li>事件处理</li>
+<li>效果和动画</li>
+<li>AJAX支持</li>
+<li>实用工具(Utilities)</li>
+<li>插件(Plugins)</li>
+<li>跨浏览器支持</li>
+</ul>
+<p>JQuery可以：</p>
+<ul>
+<li>轻松选择元素</li>
+<li>轻松更改元素的样式（CSS）和位置</li>
+<li>轻松操纵DOM元素及其属性</li>
+<li>轻松创建效果，例如显示或隐藏元素，滑动过渡等</li>
+<li>使用更少的代码轻松创建复杂的CSS动画</li>
+<li>轻松地遍历整个DOM树以查找任何元素</li>
+<li>只需一行代码即可轻松地对元素执行多项操作</li>
+<li>轻松获取或设置HTML元素的尺寸</li>
+</ul>
+
+        <h3 id="JQuery入门"   >
+          <a href="#JQuery入门" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery入门" class="headerlink" title="JQuery入门"></a>JQuery入门</h3>
+      
+        <h4 id="JQuery语法"   >
+          <a href="#JQuery语法" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery语法" class="headerlink" title="JQuery语法"></a>JQuery语法</h4>
+      <p>JQ是通过HTML元素选择器进行的，并且对元素执行操作。</p>
+<p>JQuery的基本语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">action</span>()</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>$表示JQuery</li>
+<li>(selector)用来查找HTML元素</li>
+<li>action()表示对元素的操作</li>
+</ul>
+<p>JQuery对元素的操作都要等候文档加载完成，因此需要将操作放在<code>文档就绪事件</code>中。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// JQuery方法（DOM就绪时执行）</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>如果在完全加载文档之前运行方法，可能会出现一下失败的情况:</p>
+<ul>
+<li>尝试获取未创建的元素</li>
+<li>尝试获取未加载的图像的大小</li>
+</ul>
+</blockquote>
+
+        <h3 id="JQuery选择器"   >
+          <a href="#JQuery选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h3>
+      
+        <h4 id="元素选择器"   >
+          <a href="#元素选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h4>
+      <p>选择标签元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>) <span class="comment">// 选择页面上所有的p标签</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="id选择器"   >
+          <a href="#id选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4>
+      <p>选择指定id的元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#demo&quot;</span>) <span class="comment">// 选择页面上id为demo的标签</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="class选择器"   >
+          <a href="#class选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#class选择器" class="headerlink" title=".class选择器"></a>.class选择器</h4>
+      <p>选择某些个class名下的元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.demo&quot;</span>) <span class="comment">// 选择页面上class名为demo的标签</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="并集选择器"   >
+          <a href="#并集选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h4>
+      <p>选择列举出来的所有元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;selector1, selector2, selectorN&quot;</span>) <span class="comment">// 选择页面上被提到的元素</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="其他选择器"   >
+          <a href="#其他选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#其他选择器" class="headerlink" title="其他选择器"></a>其他选择器</h4>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">语法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$(“*”)</td>
+<td align="left">选择所有元素</td>
+</tr>
+<tr>
+<td align="left">$(this)</td>
+<td align="left">选择当前元素</td>
+</tr>
+<tr>
+<td align="left">$(“p.demo”)</td>
+<td align="left">选择所有带有class&#x3D;”demo”的p元素</td>
+</tr>
+<tr>
+<td align="left">$(“p:first”)</td>
+<td align="left">选择第一个p元素</td>
+</tr>
+<tr>
+<td align="left">$(“div p:first-child”)</td>
+<td align="left">选择每个div元素的第一个p元素</td>
+</tr>
+<tr>
+<td align="left">$(“[target]”)</td>
+<td align="left">选择具有target属性的每个元素</td>
+</tr>
+<tr>
+<td align="left">$(“a[href&#x3D;’&#x2F;CSS3&#x2F;‘]”)</td>
+<td align="left">选择每个a元素的href属性值等于“ &#x2F;CSS3&#x2F;”</td>
+</tr>
+<tr>
+<td align="left">$(“a[href!&#x3D;’&#x2F;CSS3&#x2F;‘]”)</td>
+<td align="left">选择每个a元素的href属性值不等于“ &#x2F;CSS3&#x2F;”</td>
+</tr>
+<tr>
+<td align="left">$(“:text”)</td>
+<td align="left">选择类型为“text”的所有input元素</td>
+</tr>
+<tr>
+<td align="left">$(“tr:even”)</td>
+<td align="left">选择所有偶数tr元素</td>
+</tr>
+<tr>
+<td align="left">$(“tr:odd”)</td>
+<td align="left">选择所有奇数tr元素</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="JQuery事件方法"   >
+          <a href="#JQuery事件方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery事件方法" class="headerlink" title="JQuery事件方法"></a>JQuery事件方法</h3>
+      <p>在JQ中，大多数DOM事件具有等效的JQuery方法。</p>
+
+        <h4 id="常用的JQuery事件方法"   >
+          <a href="#常用的JQuery事件方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#常用的JQuery事件方法" class="headerlink" title="常用的JQuery事件方法"></a>常用的JQuery事件方法</h4>
+      
+        <h5 id="document-ready"   >
+          <a href="#document-ready" class="heading-link"><i class="fas fa-link"></i></a><a href="#document-ready" class="headerlink" title="$(document).ready()"></a>$(document).ready()</h5>
+      <p>$(document).ready()方法指定在DOM完全加载时要执行的函数。</p>
+
+        <h5 id="click"   >
+          <a href="#click" class="heading-link"><i class="fas fa-link"></i></a><a href="#click" class="headerlink" title="click()"></a>click()</h5>
+      <p>鼠标左键单击后执行方法，鼠标要按下并且抬起才可触发。</p>
+
+        <h5 id="mouseenter"   >
+          <a href="#mouseenter" class="heading-link"><i class="fas fa-link"></i></a><a href="#mouseenter" class="headerlink" title="mouseenter()"></a>mouseenter()</h5>
+      <p>鼠标指针进入元素时执行方法。</p>
+
+        <h5 id="mouseleave"   >
+          <a href="#mouseleave" class="heading-link"><i class="fas fa-link"></i></a><a href="#mouseleave" class="headerlink" title="mouseleave()"></a>mouseleave()</h5>
+      <p>鼠标离开元素时执行方法。</p>
+
+        <h5 id="mousedown"   >
+          <a href="#mousedown" class="heading-link"><i class="fas fa-link"></i></a><a href="#mousedown" class="headerlink" title="mousedown()"></a>mousedown()</h5>
+      <p>在元素上按下鼠标按钮时执行方法，鼠标按下就会触发，不用抬起。</p>
+
+        <h5 id="mouseup"   >
+          <a href="#mouseup" class="heading-link"><i class="fas fa-link"></i></a><a href="#mouseup" class="headerlink" title="mouseup()"></a>mouseup()</h5>
+      <p>鼠标悬停在元素上并且释放鼠标按钮执行方法。</p>
+
+        <h5 id="keydown"   >
+          <a href="#keydown" class="heading-link"><i class="fas fa-link"></i></a><a href="#keydown" class="headerlink" title="keydown()"></a>keydown()</h5>
+      <p>用户按下键盘上的键时，执行该函数。</p>
+
+        <h5 id="keyup"   >
+          <a href="#keyup" class="heading-link"><i class="fas fa-link"></i></a><a href="#keyup" class="headerlink" title="keyup()"></a>keyup()</h5>
+      <p>用户释放键盘上的键时，执行该函数。</p>
+
+        <h5 id="hover"   >
+          <a href="#hover" class="heading-link"><i class="fas fa-link"></i></a><a href="#hover" class="headerlink" title="hover()"></a>hover()</h5>
+      <p>鼠标指针悬停到元素上方时执行该函数。</p>
+
+        <h4 id="on-方法"   >
+          <a href="#on-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#on-方法" class="headerlink" title="on()方法"></a>on()方法</h4>
+      <p>on()方法可以为所选元素附加一个或多个事件处理程序</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="variable language_">this</span>).<span class="title function_">css</span>(<span class="string">&quot;background-color&quot;</span>, <span class="string">&quot;coral&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="off-方法"   >
+          <a href="#off-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#off-方法" class="headerlink" title="off()方法"></a>off()方法</h4>
+      <p>off()方法删除on()方法附带的一个或多个事件处理程序</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).<span class="title function_">off</span>(<span class="string">&quot;mousemove&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="事件对象"   >
+          <a href="#事件对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4>
+      <p>JQuery的事件系统根据W3C标准标准化事件对象。<br>确保将事件对象传递给事件处理程序。<br>每个事件处理函数都会接收一个事件对象，其中包含许多属性和方法。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;Event type is &quot;</span> + event.<span class="property">type</span>);</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;Target : &quot;</span> + event.<span class="property">target</span>.<span class="property">innerHTML</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">方法&#x2F;属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">event.currentTarget</td>
+<td align="left">事件冒泡阶段中的当前DOM元素</td>
+</tr>
+<tr>
+<td align="left">event.data</td>
+<td align="left">包含绑定当前执行处理程序时传递给事件方法的可选数据</td>
+</tr>
+<tr>
+<td align="left">event.delegateTarget</td>
+<td align="left">返回附加当前调用的jQuery事件处理程序的元素</td>
+</tr>
+<tr>
+<td align="left">event.isDefaultPrevented()</td>
+<td align="left">返回是否event.preventDefault()为事件对象调用</td>
+</tr>
+<tr>
+<td align="left">event.isImmediatePropagationStopped()</td>
+<td align="left">返回是否event.stopImmediatePropagation()为事件对象调用</td>
+</tr>
+<tr>
+<td align="left">event.isPropagationStopped()</td>
+<td align="left">返回是否event.stopPropagation()为事件对象调用</td>
+</tr>
+<tr>
+<td align="left">event.metakey</td>
+<td align="left">表示事件触发时是否按下了META键</td>
+</tr>
+<tr>
+<td align="left">event.namespace</td>
+<td align="left">返回触发事件时指定的名称空间</td>
+</tr>
+<tr>
+<td align="left">event.pageX</td>
+<td align="left">返回鼠标相对于文档左边缘的位置</td>
+</tr>
+<tr>
+<td align="left">event.pageY</td>
+<td align="left">返回相对于文档顶部边缘的鼠标位置</td>
+</tr>
+<tr>
+<td align="left">event.preventDefault()</td>
+<td align="left">阻止浏览器执行所选元素的默认操作</td>
+</tr>
+<tr>
+<td align="left">event.relatedTarget</td>
+<td align="left">返回鼠标移动时要输入或退出的元素</td>
+</tr>
+<tr>
+<td align="left">event.result</td>
+<td align="left">包含由指定事件触发的事件处理程序返回的最后一个&#x2F;上一个值</td>
+</tr>
+<tr>
+<td align="left">event.stopImmediatePropagation()</td>
+<td align="left">防止其他事件处理程序被调用</td>
+</tr>
+<tr>
+<td align="left">event.stopPropagation()</td>
+<td align="left">防止事件使DOM树冒泡，防止任何父处理程序收到该事件的通知</td>
+</tr>
+<tr>
+<td align="left">event.target</td>
+<td align="left">返回哪个DOM元素触发了事件</td>
+</tr>
+<tr>
+<td align="left">event.timeStamp</td>
+<td align="left">返回创建事件的时间（相对于纪元的毫秒数）</td>
+</tr>
+<tr>
+<td align="left">event.type</td>
+<td align="left">返回触发了哪种事件类型</td>
+</tr>
+<tr>
+<td align="left">event.which</td>
+<td align="left">返回事件按下的键盘键或鼠标按钮</td>
+</tr>
+</tbody></table></div>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://onlyaaandat.github.io">法棍</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://onlyaaandat.github.io/2022/11/19/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-1/">https://onlyaaandat.github.io/2022/11/19/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-1/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://onlyaaandat.github.io/tags/80%E5%B2%81%E8%80%81%E5%A5%B6%E5%A5%B6%E7%94%A8%E8%84%9A%E8%BF%87%E7%9A%84%E6%95%99%E7%A8%8B/">80岁老奶奶用脚过的教程</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://onlyaaandat.github.io/tags/JQuery/">JQuery</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/19/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-2/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">法棍学JQuery-2</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/11/14/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-13/"><span class="paginator-prev__text">法棍学Vue3-13</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JQuery%E6%9C%89%E5%95%A5%E5%A5%BD%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">
+          JQuery有啥好的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JQuery%E5%85%A5%E9%97%A8"><span class="toc-number">2.</span> <span class="toc-text">
+          JQuery入门</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JQuery%E8%AF%AD%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">
+          JQuery语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JQuery%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">
+          JQuery选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">3.1.</span> <span class="toc-text">
+          元素选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">3.2.</span> <span class="toc-text">
+          id选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">
+          .class选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E9%9B%86%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">3.4.</span> <span class="toc-text">
+          并集选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">3.5.</span> <span class="toc-text">
+          其他选择器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JQuery%E4%BA%8B%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">
+          JQuery事件方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84JQuery%E4%BA%8B%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="toc-number">4.1.</span> <span class="toc-text">
+          常用的JQuery事件方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#document-ready"><span class="toc-number">4.1.1.</span> <span class="toc-text">
+          $(document).ready()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#click"><span class="toc-number">4.1.2.</span> <span class="toc-text">
+          click()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mouseenter"><span class="toc-number">4.1.3.</span> <span class="toc-text">
+          mouseenter()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mouseleave"><span class="toc-number">4.1.4.</span> <span class="toc-text">
+          mouseleave()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mousedown"><span class="toc-number">4.1.5.</span> <span class="toc-text">
+          mousedown()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mouseup"><span class="toc-number">4.1.6.</span> <span class="toc-text">
+          mouseup()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#keydown"><span class="toc-number">4.1.7.</span> <span class="toc-text">
+          keydown()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#keyup"><span class="toc-number">4.1.8.</span> <span class="toc-text">
+          keyup()</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#hover"><span class="toc-number">4.1.9.</span> <span class="toc-text">
+          hover()</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#on-%E6%96%B9%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">
+          on()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#off-%E6%96%B9%E6%B3%95"><span class="toc-number">4.3.</span> <span class="toc-text">
+          off()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.4.</span> <span class="toc-text">
+          事件对象</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">38</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">阅读进度 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/icon/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="淡入淡出       淡入淡出方法：  fadeIn() fadeOut() fadeToggle() fadeTo()  注意，除了fadeTo()，其他方法的fade都会造成页面布局的混乱。                     fadeIn()和fadeOut()       fadeIn()将选定元素的不透明度从隐藏改为可见。fadeOut()将选">
+<meta property="og:type" content="article">
+<meta property="og:title" content="法棍学JQuery-3">
+<meta property="og:url" content="https://onlyaaandat.github.io/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-3/index.html">
+<meta property="og:site_name" content="法棍">
+<meta property="og:description" content="淡入淡出       淡入淡出方法：  fadeIn() fadeOut() fadeToggle() fadeTo()  注意，除了fadeTo()，其他方法的fade都会造成页面布局的混乱。                     fadeIn()和fadeOut()       fadeIn()将选定元素的不透明度从隐藏改为可见。fadeOut()将选">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-20T07:35:00.000Z">
+<meta property="article:modified_time" content="2022-11-20T09:12:24.910Z">
+<meta property="article:author" content="法棍">
+<meta property="article:tag" content="80岁老奶奶用脚过的教程">
+<meta property="article:tag" content="JQuery">
+<meta name="twitter:card" content="summary"><title>法棍学JQuery-3 | 法棍</title><link ref="canonical" href="https://onlyaaandat.github.io/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-3/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: undefined,
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">法棍学JQuery-3</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-20</span></span></div></header><div class="post-body">
+        <h3 id="淡入淡出"   >
+          <a href="#淡入淡出" class="heading-link"><i class="fas fa-link"></i></a><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h3>
+      <p>淡入淡出方法：</p>
+<ul>
+<li>fadeIn()</li>
+<li>fadeOut()</li>
+<li>fadeToggle()</li>
+<li>fadeTo()</li>
+</ul>
+<p>注意，除了fadeTo()，其他方法的fade都会造成页面布局的混乱。</p>
+
+        <h4 id="fadeIn-和fadeOut"   >
+          <a href="#fadeIn-和fadeOut" class="heading-link"><i class="fas fa-link"></i></a><a href="#fadeIn-和fadeOut" class="headerlink" title="fadeIn()和fadeOut()"></a>fadeIn()和fadeOut()</h4>
+      <p>fadeIn()将选定元素的不透明度从隐藏改为可见。<br>fadeOut()将选定元素的不透明度从可见改为隐藏。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 淡出显示的段落</span></span><br><span class="line">$(<span class="string">&quot;#fadeout-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">fadeOut</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 淡入隐藏的段落</span></span><br><span class="line">$(<span class="string">&quot;#fadein-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">fadeIn</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeIn</span>(duration,easing,callback)</span><br><span class="line">$(selector).<span class="title function_">fadeOut</span>(duration,easing,callback)</span><br></pre></td></tr></table></div></figure>
+
+<p>三个可选参数：</p>
+<ul>
+<li>duration 持续时间</li>
+<li>easing 缓动功能</li>
+<li>callback 调动的函数</li>
+</ul>
+
+        <h4 id="fadeToggle-方法"   >
+          <a href="#fadeToggle-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#fadeToggle-方法" class="headerlink" title="fadeToggle()方法"></a>fadeToggle()方法</h4>
+      <p>对元素作互斥，如果元素已经淡出，那么淡入，否则淡出。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeToggle</span>(duration, easing, callback);</span><br></pre></td></tr></table></div></figure>
+
+<p>三个可选参数：</p>
+<ul>
+<li>duration 持续时间</li>
+<li>easing 缓动功能</li>
+<li>callback 调动的函数</li>
+</ul>
+
+        <h4 id="fadeTo"   >
+          <a href="#fadeTo" class="heading-link"><i class="fas fa-link"></i></a><a href="#fadeTo" class="headerlink" title="fadeTo()"></a>fadeTo()</h4>
+      <p>fadeTo不会让元素display:none;，也就是不会改变页面布局。</p>
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector)fadeTo.(duration, opacity, easing, callback)</span><br></pre></td></tr></table></div></figure>
+
+<p>四个参数：</p>
+<ul>
+<li>duration 持续时间</li>
+<li>opacity 透明度</li>
+<li>easing（可选） 缓动功能</li>
+<li>callback（可选） 调动的函数</li>
+</ul>
+
+        <h3 id="滑动方法"   >
+          <a href="#滑动方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#滑动方法" class="headerlink" title="滑动方法"></a>滑动方法</h3>
+      <ul>
+<li>slideUp()</li>
+<li>slideDown()</li>
+<li>slideToggle()</li>
+</ul>
+
+        <h4 id="slideUp-和slideDown"   >
+          <a href="#slideUp-和slideDown" class="heading-link"><i class="fas fa-link"></i></a><a href="#slideUp-和slideDown" class="headerlink" title="slideUp()和slideDown()"></a>slideUp()和slideDown()</h4>
+      <p>slideUp()通过滑动隐藏选定的元素；<br>slideDown()通过花的显示选定的元素。</p>
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideUp</span>(duration, easing, callback);</span><br><span class="line">$(selector).<span class="title function_">slideDown</span>(duration, easing, callback);</span><br></pre></td></tr></table></div></figure>
+
+<p>三个可选参数：</p>
+<ul>
+<li><p>duration -确定滑动效果将运行多长时间。可能的值：“ slow”，“ fast”或毫秒</p>
+</li>
+<li><p>easing -指示要用于过渡的缓动功能。可能的值：“ swing”，“ linear”</p>
+</li>
+<li><p>callback-指定滑动方法完成后要调用的函数</p>
+</li>
+</ul>
+
+        <h4 id="slideToggle"   >
+          <a href="#slideToggle" class="heading-link"><i class="fas fa-link"></i></a><a href="#slideToggle" class="headerlink" title="slideToggle()"></a>slideToggle()</h4>
+      <p>如果所选元素最初显示，它将被隐藏；如果隐藏，它将显示出来。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideToggle</span>(duration, easing, callback);</span><br></pre></td></tr></table></div></figure>
+
+<p>三个可选参数：</p>
+<ul>
+<li><p>duration -确定滑动效果将运行多长时间。可能的值：“ slow”，“ fast”或毫秒</p>
+</li>
+<li><p>easing -指示要用于过渡的缓动功能。可能的值：“ swing”，“ linear”</p>
+</li>
+<li><p>callback-指定滑动方法完成后要调用的函数</p>
+</li>
+</ul>
+
+        <h3 id="动画"   >
+          <a href="#动画" class="heading-link"><i class="fas fa-link"></i></a><a href="#动画" class="headerlink" title="动画"></a>动画</h3>
+      
+        <h4 id="animate-方法"   >
+          <a href="#animate-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#animate-方法" class="headerlink" title="animate()方法"></a>animate()方法</h4>
+      <p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">animate</span>(&#123;styles&#125;, duration, easing, callback)</span><br></pre></td></tr></table></div></figure>
+
+<p>参数：</p>
+<ul>
+<li><p>{styles} -指定动画将向其移动的CSS属性和值的对象</p>
+</li>
+<li><p>duration -确定动画效果将运行多长时间。可能的值：“ slow”，“ fast”或毫秒</p>
+</li>
+<li><p>easing -指示要用于过渡的缓动功能。可能的值：“ swing”，“ linear”</p>
+</li>
+<li><p>callback-指定在animate()方法完成后要调用的函数</p>
+</li>
+</ul>
+<p>使用animate()方法时要记住的要点：</p>
+<ul>
+<li><p>所有动画属性都应设置为单个数值（例如，宽度，高度或左值）。</p>
+</li>
+<li><p>字符串值不能设置为动画（例如，背景颜色）</p>
+</li>
+<li><p>要设置背景颜色的动画，请使用jQuery颜色插件</p>
+</li>
+<li><p>与animate()方法一起使用时，属性名称必须为camelCased，如：您应该使用paddingTop而不是padding-top，使用marginLeft而不是margin-left，等等。</p>
+</li>
+</ul>
+
+        <h4 id="animate-队列动画"   >
+          <a href="#animate-队列动画" class="heading-link"><i class="fas fa-link"></i></a><a href="#animate-队列动画" class="headerlink" title="animate()队列动画"></a>animate()队列动画</h4>
+      <p>默认情况下，JQuery带有动画的队列功能，在队列中，一个或多个功能会等待运行。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> div = $(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">  div.<span class="title function_">animate</span>(&#123;<span class="attr">width</span>:<span class="string">&quot;500px&quot;</span>&#125;);</span><br><span class="line">  div.<span class="title function_">animate</span>(&#123;<span class="attr">height</span>:<span class="string">&quot;200px&quot;</span>&#125;);</span><br><span class="line">  div.<span class="title function_">animate</span>(&#123;<span class="attr">fontSize</span>: <span class="string">&quot;10em&quot;</span>&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">width</span>:<span class="string">&quot;500px&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">height</span>:<span class="string">&quot;200px&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">fontSize</span>: <span class="string">&quot;10em&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">opacity</span>: <span class="number">0.3</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="animate-使用相对值"   >
+          <a href="#animate-使用相对值" class="heading-link"><i class="fas fa-link"></i></a><a href="#animate-使用相对值" class="headerlink" title="animate()使用相对值"></a>animate()使用相对值</h4>
+      <p>动画属性也可以是相对的。如果为值提供了前导+&#x3D;或-&#x3D;字符序列，则通过从属性的当前值中添加或减去给定的数字来计算目标值。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="variable language_">this</span>).<span class="title function_">animate</span>(&#123;</span><br><span class="line">    <span class="attr">fontSize</span>: <span class="string">&quot;+=5px&quot;</span>,</span><br><span class="line">    padding : <span class="string">&quot;+=10px&quot;</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="animate-使用预定义值"   >
+          <a href="#animate-使用预定义值" class="heading-link"><i class="fas fa-link"></i></a><a href="#animate-使用预定义值" class="headerlink" title="animate()使用预定义值"></a>animate()使用预定义值</h4>
+      <p>此外，我们甚至可以指定属性的动画值”show”，”hide”或”toggle”：</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).<span class="title function_">animate</span>(&#123;<span class="attr">height</span>: <span class="string">&quot;toggle&quot;</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="停止动画"   >
+          <a href="#停止动画" class="heading-link"><i class="fas fa-link"></i></a><a href="#停止动画" class="headerlink" title="停止动画"></a>停止动画</h3>
+      
+        <h4 id="stop-方法"   >
+          <a href="#stop-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#stop-方法" class="headerlink" title="stop()方法"></a>stop()方法</h4>
+      <p>stop()方法将在完成之前停止当前在选定元素上运行的jQuery动画或效果。</p>
+<p>在元素上调用stop()时，当前正在运行的动画（如果有）立即停止。</p>
+<p>如果在同一元素上调用了多个动画方法，则以后的动画将放置在效果队列中。</p>
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">stop</span>(clearQueue, jumpToEnd)</span><br></pre></td></tr></table></div></figure>
+
+<p>两个可选参数：</p>
+<ul>
+<li><p>clearQueue-一个布尔值，指示是否也要删除排队的动画。默认为false（全部停止，包括队列后的）</p>
+</li>
+<li><p>jumpToEnd-一个布尔值，指示是否立即完成当前动画。默认为false（立即完成所有动画）</p>
+</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://onlyaaandat.github.io">法棍</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://onlyaaandat.github.io/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-3/">https://onlyaaandat.github.io/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-3/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://onlyaaandat.github.io/tags/80%E5%B2%81%E8%80%81%E5%A5%B6%E5%A5%B6%E7%94%A8%E8%84%9A%E8%BF%87%E7%9A%84%E6%95%99%E7%A8%8B/">80岁老奶奶用脚过的教程</a></span><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://onlyaaandat.github.io/tags/JQuery/">JQuery</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-4/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">法棍学JQuery-4</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/11/19/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-2/"><span class="paginator-prev__text">法棍学JQuery-2</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA"><span class="toc-number">1.</span> <span class="toc-text">
+          淡入淡出</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#fadeIn-%E5%92%8CfadeOut"><span class="toc-number">1.1.</span> <span class="toc-text">
+          fadeIn()和fadeOut()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fadeToggle-%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">
+          fadeToggle()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fadeTo"><span class="toc-number">1.3.</span> <span class="toc-text">
+          fadeTo()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">
+          滑动方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#slideUp-%E5%92%8CslideDown"><span class="toc-number">2.1.</span> <span class="toc-text">
+          slideUp()和slideDown()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slideToggle"><span class="toc-number">2.2.</span> <span class="toc-text">
+          slideToggle()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB"><span class="toc-number">3.</span> <span class="toc-text">
+          动画</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#animate-%E6%96%B9%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">
+          animate()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#animate-%E9%98%9F%E5%88%97%E5%8A%A8%E7%94%BB"><span class="toc-number">3.2.</span> <span class="toc-text">
+          animate()队列动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#animate-%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%AF%B9%E5%80%BC"><span class="toc-number">3.3.</span> <span class="toc-text">
+          animate()使用相对值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#animate-%E4%BD%BF%E7%94%A8%E9%A2%84%E5%AE%9A%E4%B9%89%E5%80%BC"><span class="toc-number">3.4.</span> <span class="toc-text">
+          animate()使用预定义值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9C%E6%AD%A2%E5%8A%A8%E7%94%BB"><span class="toc-number">4.</span> <span class="toc-text">
+          停止动画</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#stop-%E6%96%B9%E6%B3%95"><span class="toc-number">4.1.</span> <span class="toc-text">
+          stop()方法</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">38</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">阅读进度 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

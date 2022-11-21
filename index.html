@@ -28,7 +28,721 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/14/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-13/">法棍学Vue3-13</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-14</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-6/">法棍学JQuery-6</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="操作CSS"   >
+          <a href="#操作CSS" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作CSS" class="headerlink" title="操作CSS"></a>操作CSS</h3>
+      <ul>
+<li>addClass()</li>
+<li>removeClass()</li>
+<li>toggleClass()</li>
+<li>css()</li>
+</ul>
+
+        <h4 id="addClass-方法"   >
+          <a href="#addClass-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#addClass-方法" class="headerlink" title="addClass()方法"></a>addClass()方法</h4>
+      <p>将一个或者多个类名添加到所选元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p:first&quot;</span>).<span class="title function_">addClass</span>(<span class="string">&quot;highlight&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 一次可以将多个类（空格隔开）添加到所选元素</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p:first&quot;</span>).<span class="title function_">addClass</span>(<span class="string">&quot;highlight big&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="removeClass-方法"   >
+          <a href="#removeClass-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#removeClass-方法" class="headerlink" title="removeClass()方法"></a>removeClass()方法</h4>
+      <p>从所选元素中删除一个或者多个类名</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">removeClass</span>(<span class="string">&quot;highlight&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除多个类名（空格隔开）</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">removeClass</span>(<span class="string">&quot;highlight big&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果参数中不指定类名，则删除选中元素的全部类名</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">removeClass</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="toggleClass-方法"   >
+          <a href="#toggleClass-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#toggleClass-方法" class="headerlink" title="toggleClass()方法"></a>toggleClass()方法</h4>
+      <p>在添加、删除所选元素中的一个或多个类名之间切换。</p>
+<p>此方法会检查每个元素的指定类名称：</p>
+<ul>
+<li>如果缺少类名，则添加</li>
+<li>如果已经存在类名，则删除</li>
+</ul>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">toggleClass</span>(<span class="string">&quot;anotherClass&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="css-方法"   >
+          <a href="#css-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#css-方法" class="headerlink" title="css()方法"></a>css()方法</h3>
+      <p>css()方法获取或设置所选元素的一个或者多个样式属性。</p>
+
+        <h4 id="返回CSS属性值"   >
+          <a href="#返回CSS属性值" class="heading-link"><i class="fas fa-link"></i></a><a href="#返回CSS属性值" class="headerlink" title="返回CSS属性值"></a>返回CSS属性值</h4>
+      <blockquote>
+<p>$(selector).css(property)</p>
+</blockquote>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="variable language_">this</span>).<span class="title function_">css</span>(<span class="string">&quot;background-color&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="设置CSS属性和值"   >
+          <a href="#设置CSS属性和值" class="heading-link"><i class="fas fa-link"></i></a><a href="#设置CSS属性和值" class="headerlink" title="设置CSS属性和值"></a>设置CSS属性和值</h4>
+      <blockquote>
+<p>$(selector).css(property,value)</p>
+</blockquote>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">css</span>(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;blue&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<p>当使用css()方法获取属性值时，它将返回第一个选定元素的值。<br>使用css()方法设置属性值时，它将为所有选定元素设置一个或多个属性、值对。</p>
+
+        <h4 id="设置多个CSS属性和值"   >
+          <a href="#设置多个CSS属性和值" class="heading-link"><i class="fas fa-link"></i></a><a href="#设置多个CSS属性和值" class="headerlink" title="设置多个CSS属性和值"></a>设置多个CSS属性和值</h4>
+      <p>要设置多个CSS属性和值，语法：</p>
+<blockquote>
+<p>$(selector).css({property:value,property:value,···})</p>
+</blockquote>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">css</span>(&#123;</span><br><span class="line">    <span class="string">&quot;color&quot;</span>: <span class="string">&quot;white&quot;</span>,</span><br><span class="line">    <span class="string">&quot;font-size&quot;</span>: <span class="string">&quot;1.3em&quot;</span>,</span><br><span class="line">    <span class="string">&quot;background-color&quot;</span>: <span class="string">&quot;#4285f4&quot;</span>,</span><br><span class="line">    <span class="string">&quot;padding&quot;</span>: <span class="string">&quot;20px&quot;</span>  </span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="尺寸"   >
+          <a href="#尺寸" class="heading-link"><i class="fas fa-link"></i></a><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h3>
+      <ul>
+<li>width()</li>
+<li>height()</li>
+<li>innerWidth()</li>
+<li>innerHeight()</li>
+<li>outerWidth()</li>
+<li>outerHeight()</li>
+</ul>
+<p><img src="https://www.cainiaojc.com/run/images/jquery_dimensions.png" alt="box"></p>
+
+        <h4 id="width-和height"   >
+          <a href="#width-和height" class="heading-link"><i class="fas fa-link"></i></a><a href="#width-和height" class="headerlink" title="width()和height()"></a>width()和height()</h4>
+      <p>width()获取或设置所选元素的宽度（不包括padding、border、margin）<br>height()获取或设置所选元素的高度（不包括padding、border、margin）</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> w = $(<span class="variable language_">this</span>).<span class="title function_">width</span>();</span><br><span class="line">  <span class="keyword">let</span> h = $(<span class="variable language_">this</span>).<span class="title function_">height</span>();</span><br><span class="line">  $(<span class="variable language_">this</span>).<span class="title function_">html</span>(<span class="string">&quot;DIV的宽度: &quot;</span> + w + <span class="string">&quot;&lt;br&gt;&quot;</span> + <span class="string">&quot;DIV的高度: &quot;</span> + h);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">width</span>(<span class="number">250</span>);</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">height</span>(<span class="number">100</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="innerWidth-和innerHeight"   >
+          <a href="#innerWidth-和innerHeight" class="heading-link"><i class="fas fa-link"></i></a><a href="#innerWidth-和innerHeight" class="headerlink" title="innerWidth()和innerHeight()"></a>innerWidth()和innerHeight()</h4>
+      <p>innerWidth()方法获取或设置所选元素的宽度（不包括border、margin）<br>innerHeight()方法获取或设置所选元素的高度（不包括border、margin）</p>
+
+        <h4 id="outerWidth-和outerHeight"   >
+          <a href="#outerWidth-和outerHeight" class="heading-link"><i class="fas fa-link"></i></a><a href="#outerWidth-和outerHeight" class="headerlink" title="outerWidth()和outerHeight()"></a>outerWidth()和outerHeight()</h4>
+      <p>outerWidth()方法获取或设置所选元素的宽度（不包括margin）<br>outerHeight()方法获取或设置所选元素的高度（不包括margin）</p>
+<p>outerWidth(true)方法获取或设置所选元素的宽度（包括margin）<br>outerHeight(true)方法获取或设置所选元素的高度（包括margin）</p>
+
+        <h4 id="其他用法"   >
+          <a href="#其他用法" class="heading-link"><i class="fas fa-link"></i></a><a href="#其他用法" class="headerlink" title="其他用法"></a>其他用法</h4>
+      <p>获取窗口和文档的宽高</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="variable language_">window</span>).<span class="title function_">width</span>();<span class="comment">// 返回浏览器窗口的宽度</span></span><br><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">width</span>();  <span class="comment">// 返回HTML文档的宽度</span></span><br><span class="line"></span><br><span class="line">$(<span class="variable language_">window</span>).<span class="title function_">height</span>();<span class="comment">// 返回浏览器窗口的高度</span></span><br><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">height</span>();  <span class="comment">// 返回HTML文档的高度</span></span><br></pre></td></tr></table></div></figure></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-5/">法棍学JQuery-5</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="添加元素"   >
+          <a href="#添加元素" class="heading-link"><i class="fas fa-link"></i></a><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3>
+      <ul>
+<li>append()</li>
+<li>prepend()</li>
+<li>after()</li>
+<li>before()</li>
+<li>wrap()</li>
+</ul>
+
+        <h4 id="append"   >
+          <a href="#append" class="heading-link"><i class="fas fa-link"></i></a><a href="#append" class="headerlink" title="append()"></a>append()</h4>
+      <p>在每个被选定元素的末尾（作为最后一个子元素）插入指定的内容。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">append</span>(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">append</span>(<span class="string">&quot;&lt;b&gt;Hello world&lt;/b&gt;&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="prepend"   >
+          <a href="#prepend" class="heading-link"><i class="fas fa-link"></i></a><a href="#prepend" class="headerlink" title="prepend()"></a>prepend()</h4>
+      <p>在每个选定元素的末尾（作为最后一个子元素）插入指定的内容。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">prepend</span>(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">prepend</span>(<span class="string">&quot;&lt;b&gt;Hello world&lt;/b&gt;&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="append-和prepend-添加多个元素"   >
+          <a href="#append-和prepend-添加多个元素" class="heading-link"><i class="fas fa-link"></i></a><a href="#append-和prepend-添加多个元素" class="headerlink" title="append()和prepend()添加多个元素"></a>append()和prepend()添加多个元素</h4>
+      <p>append()个prepend()可以添加多个参数，这些参数将会有序地插入。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">appendText</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="string">&quot;&lt;p&gt;示例文本.&lt;/p&gt;&quot;</span>;  <span class="comment">// 用HTML创建元素  </span></span><br><span class="line">  <span class="keyword">let</span> y = $(<span class="string">&quot;&lt;p&gt;&lt;/p&gt;&quot;</span>).<span class="title function_">text</span>(<span class="string">&quot;示例文本.&quot;</span>);  <span class="comment">// 用jQuery创建</span></span><br><span class="line">  <span class="keyword">let</span> z = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;p&quot;</span>);<span class="comment">// 用DOM创建</span></span><br><span class="line">  z.<span class="property">innerHTML</span> = <span class="string">&quot;示例文本.&quot;</span>;</span><br><span class="line">  $(<span class="string">&quot;body&quot;</span>).<span class="title function_">append</span>(x, y, z);  <span class="comment">//添加新元素 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="after-与before"   >
+          <a href="#after-与before" class="heading-link"><i class="fas fa-link"></i></a><a href="#after-与before" class="headerlink" title="after()与before()"></a>after()与before()</h4>
+      <p>在被选定的元素的后面或者前面插入指定内容。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">after</span>(<span class="string">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">before</span>(<span class="string">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">afterText</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> x = <span class="string">&quot;&lt;p&gt;示例文本.&lt;/p&gt;&quot;</span>;  <span class="comment">// 用HTML创建元素  </span></span><br><span class="line">  <span class="keyword">let</span> y = $(<span class="string">&quot;&lt;p&gt;&lt;/p&gt;&quot;</span>).<span class="title function_">text</span>(<span class="string">&quot;示例文本.&quot;</span>);  <span class="comment">// 用jQuery创建</span></span><br><span class="line">  <span class="keyword">let</span> z = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;p&quot;</span>);<span class="comment">// 用DOM创建</span></span><br><span class="line">  z.<span class="property">innerHTML</span> = <span class="string">&quot;示例文本.&quot;</span>;</span><br><span class="line"> $(<span class="string">&quot;h1&quot;</span>).<span class="title function_">after</span>(x, y, z);  <span class="comment">// 在&lt;h1&gt;之后插入新元素</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+<p>同样，before()和after()都可以接收多个参数，这些实参将会有序插入指定位置。</p>
+
+        <h4 id="wrap"   >
+          <a href="#wrap" class="heading-link"><i class="fas fa-link"></i></a><a href="#wrap" class="headerlink" title="wrap()"></a>wrap()</h4>
+      <p>将指定的HTML结构包裹在每个选定的元素前后。<br><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.cainiaojc.com/run/jquery_html_wrap.html" >例子</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在p元素外部包裹div元素</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">wrap</span>(<span class="string">&quot;&lt;div&gt;&lt;/div&gt;&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="删除元素"   >
+          <a href="#删除元素" class="heading-link"><i class="fas fa-link"></i></a><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3>
+      <ul>
+<li>remove()</li>
+<li>empty()</li>
+<li>unwrap()</li>
+</ul>
+
+        <h4 id="remove-方法"   >
+          <a href="#remove-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#remove-方法" class="headerlink" title="remove()方法"></a>remove()方法</h4>
+      <p>从DOM中删除特定的元素及其子元素。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">remove</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<p>remove()可以接受一个参数，参数可以过滤掉要删除的元素。</p>
+<p>参数可以是任何JQuery选择器。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除包含“Hello”的段落</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">remove</span>(<span class="string">&quot;:contains(&#x27;Hello&#x27;)&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="empty-方法"   >
+          <a href="#empty-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#empty-方法" class="headerlink" title="empty()方法"></a>empty()方法</h4>
+      <p>从所选元素中删除所有的子节点（包括文本节点）。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">empty</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<p>注意：此方法不会删除元素本身或者它的属性（只删子节点）。</p>
+
+        <h4 id="unwrap"   >
+          <a href="#unwrap" class="heading-link"><i class="fas fa-link"></i></a><a href="#unwrap" class="headerlink" title="unwrap()"></a>unwrap()</h4>
+      <p>删除所选元素的父元素（包着它的那个标签元素）。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">unwrap</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="removeAttr"   >
+          <a href="#removeAttr" class="heading-link"><i class="fas fa-link"></i></a><a href="#removeAttr" class="headerlink" title="removeAttr()"></a>removeAttr()</h4>
+      <p>删除所选元素的一个或者多个属性。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除一个属性</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;a&quot;</span>).<span class="title function_">removeAttr</span>(<span class="string">&quot;href&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 删除多个属性</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">removeAttr</span>(<span class="string">&quot;id class title&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-4/">法棍学JQuery-4</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="方法链"   >
+          <a href="#方法链" class="heading-link"><i class="fas fa-link"></i></a><a href="#方法链" class="headerlink" title="方法链"></a>方法链</h3>
+      <p>允许在单个语句的同一元素上运行多个JQuery方法。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">css</span>(<span class="string">&quot;background-color&quot;</span>, <span class="string">&quot;coral&quot;</span>).<span class="title function_">hide</span>(<span class="number">2000</span>).<span class="title function_">show</span>(<span class="number">2000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">width</span>:<span class="string">&quot;500px&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">height</span>:<span class="string">&quot;200px&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">fontSize</span>: <span class="string">&quot;10em&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">opacity</span>: <span class="number">0.3</span>&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意：有些jQuery方法不返回jQuery对象，而另一些仅根据我们传递给它的参数返回它。考虑以下示例：</span></span><br><span class="line"><span class="comment">// 正确用法</span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">css</span>(<span class="string">&quot;background-color&quot;</span>, <span class="string">&quot;coral&quot;</span>).<span class="title function_">hide</span>(<span class="number">2000</span>).<span class="title function_">show</span>(<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 错误用法</span></span><br><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">css</span>(<span class="string">&quot;background-color&quot;</span>, <span class="string">&quot;coral&quot;</span>).<span class="title function_">hide</span>().<span class="title function_">show</span>();</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="JQuery-获取、设置"   >
+          <a href="#JQuery-获取、设置" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery-获取、设置" class="headerlink" title="JQuery 获取、设置"></a>JQuery 获取、设置</h3>
+      <p>使用JQuery，可以轻松地获取HTML元素，有以下操作DOM的JQuery方法：</p>
+<ul>
+<li>html()</li>
+<li>text()</li>
+<li>val()</li>
+</ul>
+
+        <h4 id="html"   >
+          <a href="#html" class="heading-link"><i class="fas fa-link"></i></a><a href="#html" class="headerlink" title="html()"></a>html()</h4>
+      <p>获取或者设置所选元素的内容(innerHTML)</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>($(<span class="string">&quot;p&quot;</span>).<span class="title function_">html</span>());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">html</span>(<span class="string">&quot;我想说: &lt;b&gt;Hello world&lt;/b&gt;&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="text-方法"   >
+          <a href="#text-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#text-方法" class="headerlink" title="text()方法"></a>text()方法</h4>
+      <p>获取或设置选定元素（包括其后代）的文本内容。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>($(<span class="string">&quot;p&quot;</span>).<span class="title function_">text</span>());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">text</span>(<span class="string">&quot;我想说: Hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="html-和text-的区别"   >
+          <a href="#html-和text-的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#html-和text-的区别" class="headerlink" title="html()和text()的区别"></a>html()和text()的区别</h4>
+      <p>html()和text()方法都可以设置或获取HTML元素的内容，但是有以下区别：</p>
+<p>html()：</p>
+<ul>
+<li><p>设置或获取所选元素的内容（文本+ HTML标记）</p>
+</li>
+<li><p>当使用html()方法获取内容时，它将返回第一个选定元素的内容</p>
+</li>
+</ul>
+<p>text()：</p>
+<ul>
+<li><p>设置或获取所选元素的内容（仅文本）</p>
+</li>
+<li><p>当使用text()方法获取内容时，它将返回所有选定元素的文本内容</p>
+</li>
+</ul>
+
+        <h4 id="val-方法"   >
+          <a href="#val-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#val-方法" class="headerlink" title="val()方法"></a>val()方法</h4>
+      <p>获取或设置所选表单元素的value属性</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;input:text&quot;</span>).<span class="title function_">val</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;input&quot;</span>).<span class="title function_">val</span>(<span class="string">&quot;Hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="attr-方法"   >
+          <a href="#attr-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#attr-方法" class="headerlink" title="attr()方法"></a>attr()方法</h4>
+      <p>获取或设置所选元素的属性和值。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;img&quot;</span>).<span class="title function_">attr</span>(<span class="string">&quot;src&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;img&quot;</span>).<span class="title function_">attr</span>(<span class="string">&quot;src&quot;</span>, <span class="string">&quot;logo_jquery.png&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多个值</span></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;img&quot;</span>).<span class="title function_">attr</span>(&#123;</span><br><span class="line">    <span class="attr">alt</span>: <span class="string">&quot;Seagull Icon&quot;</span>,</span><br><span class="line">    <span class="attr">title</span>: <span class="string">&quot;Image by Seagull&quot;</span>,</span><br><span class="line">    <span class="attr">width</span>: <span class="string">&quot;350px&quot;</span>,</span><br><span class="line">    <span class="attr">height</span>: <span class="string">&quot;300px&quot;</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/20/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-3/">法棍学JQuery-3</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-20</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="淡入淡出"   >
+          <a href="#淡入淡出" class="heading-link"><i class="fas fa-link"></i></a><a href="#淡入淡出" class="headerlink" title="淡入淡出"></a>淡入淡出</h3>
+      <p>淡入淡出方法：</p>
+<ul>
+<li>fadeIn()</li>
+<li>fadeOut()</li>
+<li>fadeToggle()</li>
+<li>fadeTo()</li>
+</ul>
+<p>注意，除了fadeTo()，其他方法的fade都会造成页面布局的混乱。</p>
+
+        <h4 id="fadeIn-和fadeOut"   >
+          <a href="#fadeIn-和fadeOut" class="heading-link"><i class="fas fa-link"></i></a><a href="#fadeIn-和fadeOut" class="headerlink" title="fadeIn()和fadeOut()"></a>fadeIn()和fadeOut()</h4>
+      <p>fadeIn()将选定元素的不透明度从隐藏改为可见。<br>fadeOut()将选定元素的不透明度从可见改为隐藏。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 淡出显示的段落</span></span><br><span class="line">$(<span class="string">&quot;#fadeout-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">fadeOut</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 淡入隐藏的段落</span></span><br><span class="line">$(<span class="string">&quot;#fadein-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">fadeIn</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeIn</span>(duration,easing,callback)</span><br><span class="line">$(selector).<span class="title function_">fadeOut</span>(duration,easing,callback)</span><br></pre></td></tr></table></div></figure>
+
+<p>三个可选参数：</p>
+<ul>
+<li>duration 持续时间</li>
+<li>easing 缓动功能</li>
+<li>callback 调动的函数</li>
+</ul>
+
+        <h4 id="fadeToggle-方法"   >
+          <a href="#fadeToggle-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#fadeToggle-方法" class="headerlink" title="fadeToggle()方法"></a>fadeToggle()方法</h4>
+      <p>对元素作互斥，如果元素已经淡出，那么淡入，否则淡出。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">fadeToggle</span>(duration, easing, callback);</span><br></pre></td></tr></table></div></figure>
+
+<p>三个可选参数：</p>
+<ul>
+<li>duration 持续时间</li>
+<li>easing 缓动功能</li>
+<li>callback 调动的函数</li>
+</ul>
+
+        <h4 id="fadeTo"   >
+          <a href="#fadeTo" class="heading-link"><i class="fas fa-link"></i></a><a href="#fadeTo" class="headerlink" title="fadeTo()"></a>fadeTo()</h4>
+      <p>fadeTo不会让元素display:none;，也就是不会改变页面布局。</p>
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector)fadeTo.(duration, opacity, easing, callback)</span><br></pre></td></tr></table></div></figure>
+
+<p>四个参数：</p>
+<ul>
+<li>duration 持续时间</li>
+<li>opacity 透明度</li>
+<li>easing（可选） 缓动功能</li>
+<li>callback（可选） 调动的函数</li>
+</ul>
+
+        <h3 id="滑动方法"   >
+          <a href="#滑动方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#滑动方法" class="headerlink" title="滑动方法"></a>滑动方法</h3>
+      <ul>
+<li>slideUp()</li>
+<li>slideDown()</li>
+<li>slideToggle()</li>
+</ul>
+
+        <h4 id="slideUp-和slideDown"   >
+          <a href="#slideUp-和slideDown" class="heading-link"><i class="fas fa-link"></i></a><a href="#slideUp-和slideDown" class="headerlink" title="slideUp()和slideDown()"></a>slideUp()和slideDown()</h4>
+      <p>slideUp()通过滑动隐藏选定的元素；<br>slideDown()通过花的显示选定的元素。</p>
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideUp</span>(duration, easing, callback);</span><br><span class="line">$(selector).<span class="title function_">slideDown</span>(duration, easing, callback);</span><br></pre></td></tr></table></div></figure>
+
+<p>三个可选参数：</p>
+<ul>
+<li><p>duration -确定滑动效果将运行多长时间。可能的值：“ slow”，“ fast”或毫秒</p>
+</li>
+<li><p>easing -指示要用于过渡的缓动功能。可能的值：“ swing”，“ linear”</p>
+</li>
+<li><p>callback-指定滑动方法完成后要调用的函数</p>
+</li>
+</ul>
+
+        <h4 id="slideToggle"   >
+          <a href="#slideToggle" class="heading-link"><i class="fas fa-link"></i></a><a href="#slideToggle" class="headerlink" title="slideToggle()"></a>slideToggle()</h4>
+      <p>如果所选元素最初显示，它将被隐藏；如果隐藏，它将显示出来。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">slideToggle</span>(duration, easing, callback);</span><br></pre></td></tr></table></div></figure>
+
+<p>三个可选参数：</p>
+<ul>
+<li><p>duration -确定滑动效果将运行多长时间。可能的值：“ slow”，“ fast”或毫秒</p>
+</li>
+<li><p>easing -指示要用于过渡的缓动功能。可能的值：“ swing”，“ linear”</p>
+</li>
+<li><p>callback-指定滑动方法完成后要调用的函数</p>
+</li>
+</ul>
+
+        <h3 id="动画"   >
+          <a href="#动画" class="heading-link"><i class="fas fa-link"></i></a><a href="#动画" class="headerlink" title="动画"></a>动画</h3>
+      
+        <h4 id="animate-方法"   >
+          <a href="#animate-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#animate-方法" class="headerlink" title="animate()方法"></a>animate()方法</h4>
+      <p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">animate</span>(&#123;styles&#125;, duration, easing, callback)</span><br></pre></td></tr></table></div></figure>
+
+<p>参数：</p>
+<ul>
+<li><p>{styles} -指定动画将向其移动的CSS属性和值的对象</p>
+</li>
+<li><p>duration -确定动画效果将运行多长时间。可能的值：“ slow”，“ fast”或毫秒</p>
+</li>
+<li><p>easing -指示要用于过渡的缓动功能。可能的值：“ swing”，“ linear”</p>
+</li>
+<li><p>callback-指定在animate()方法完成后要调用的函数</p>
+</li>
+</ul>
+<p>使用animate()方法时要记住的要点：</p>
+<ul>
+<li><p>所有动画属性都应设置为单个数值（例如，宽度，高度或左值）。</p>
+</li>
+<li><p>字符串值不能设置为动画（例如，背景颜色）</p>
+</li>
+<li><p>要设置背景颜色的动画，请使用jQuery颜色插件</p>
+</li>
+<li><p>与animate()方法一起使用时，属性名称必须为camelCased，如：您应该使用paddingTop而不是padding-top，使用marginLeft而不是margin-left，等等。</p>
+</li>
+</ul>
+
+        <h4 id="animate-队列动画"   >
+          <a href="#animate-队列动画" class="heading-link"><i class="fas fa-link"></i></a><a href="#animate-队列动画" class="headerlink" title="animate()队列动画"></a>animate()队列动画</h4>
+      <p>默认情况下，JQuery带有动画的队列功能，在队列中，一个或多个功能会等待运行。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> div = $(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">  div.<span class="title function_">animate</span>(&#123;<span class="attr">width</span>:<span class="string">&quot;500px&quot;</span>&#125;);</span><br><span class="line">  div.<span class="title function_">animate</span>(&#123;<span class="attr">height</span>:<span class="string">&quot;200px&quot;</span>&#125;);</span><br><span class="line">  div.<span class="title function_">animate</span>(&#123;<span class="attr">fontSize</span>: <span class="string">&quot;10em&quot;</span>&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">width</span>:<span class="string">&quot;500px&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">height</span>:<span class="string">&quot;200px&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">fontSize</span>: <span class="string">&quot;10em&quot;</span>&#125;)</span><br><span class="line">    .<span class="title function_">animate</span>(&#123;<span class="attr">opacity</span>: <span class="number">0.3</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="animate-使用相对值"   >
+          <a href="#animate-使用相对值" class="heading-link"><i class="fas fa-link"></i></a><a href="#animate-使用相对值" class="headerlink" title="animate()使用相对值"></a>animate()使用相对值</h4>
+      <p>动画属性也可以是相对的。如果为值提供了前导+&#x3D;或-&#x3D;字符序列，则通过从属性的当前值中添加或减去给定的数字来计算目标值。</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="variable language_">this</span>).<span class="title function_">animate</span>(&#123;</span><br><span class="line">    <span class="attr">fontSize</span>: <span class="string">&quot;+=5px&quot;</span>,</span><br><span class="line">    padding : <span class="string">&quot;+=10px&quot;</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="animate-使用预定义值"   >
+          <a href="#animate-使用预定义值" class="heading-link"><i class="fas fa-link"></i></a><a href="#animate-使用预定义值" class="headerlink" title="animate()使用预定义值"></a>animate()使用预定义值</h4>
+      <p>此外，我们甚至可以指定属性的动画值”show”，”hide”或”toggle”：</p>
+<p>例子：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).<span class="title function_">animate</span>(&#123;<span class="attr">height</span>: <span class="string">&quot;toggle&quot;</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="停止动画"   >
+          <a href="#停止动画" class="heading-link"><i class="fas fa-link"></i></a><a href="#停止动画" class="headerlink" title="停止动画"></a>停止动画</h3>
+      
+        <h4 id="stop-方法"   >
+          <a href="#stop-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#stop-方法" class="headerlink" title="stop()方法"></a>stop()方法</h4>
+      <p>stop()方法将在完成之前停止当前在选定元素上运行的jQuery动画或效果。</p>
+<p>在元素上调用stop()时，当前正在运行的动画（如果有）立即停止。</p>
+<p>如果在同一元素上调用了多个动画方法，则以后的动画将放置在效果队列中。</p>
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">stop</span>(clearQueue, jumpToEnd)</span><br></pre></td></tr></table></div></figure>
+
+<p>两个可选参数：</p>
+<ul>
+<li><p>clearQueue-一个布尔值，指示是否也要删除排队的动画。默认为false（全部停止，包括队列后的）</p>
+</li>
+<li><p>jumpToEnd-一个布尔值，指示是否立即完成当前动画。默认为false（立即完成所有动画）</p>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/19/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-2/">法棍学JQuery-2</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-20</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="JQuery效果"   >
+          <a href="#JQuery效果" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery效果" class="headerlink" title="JQuery效果"></a>JQuery效果</h3>
+      
+        <h4 id="JQuery-hide-和show"   >
+          <a href="#JQuery-hide-和show" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery-hide-和show" class="headerlink" title="JQuery hide()和show()"></a>JQuery hide()和show()</h4>
+      <p>hide():</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">hide</span>(duration, easing, callback);</span><br></pre></td></tr></table></div></figure>
+<p>show():</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">show</span>(duration, easing, callback);</span><br></pre></td></tr></table></div></figure>
+
+<p>hide()和show()方法接受三个可选参数：</p>
+<ul>
+<li><p>duration -确定效果将持续多长时间。可能的值：“ slow”，“ fast”或毫秒</p>
+</li>
+<li><p>easing -指示要用于过渡的缓动功能。可能的值：“ swing”，“ linear”</p>
+</li>
+<li><p>callback-指定方法完成后要调用的函数</p>
+</li>
+</ul>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 隐藏正常显示的段落</span></span><br><span class="line">$(<span class="string">&quot;#hide-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">hide</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 显示被隐藏的段落</span></span><br><span class="line">$(<span class="string">&quot;#show-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">show</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#hide-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">hide</span>(<span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;#show-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;p&quot;</span>).<span class="title function_">show</span>(<span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;span:last-child&quot;</span>).<span class="title function_">hide</span>(<span class="string">&quot;fast&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">$(<span class="variable language_">this</span>).<span class="title function_">prev</span>().<span class="title function_">hide</span>(<span class="string">&quot;fast&quot;</span>, <span class="variable language_">arguments</span>.<span class="property">callee</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#hide-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).<span class="title function_">hide</span>(<span class="number">1000</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;DIV被隐藏&quot;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$(<span class="string">&quot;#show-btn&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).<span class="title function_">show</span>(<span class="number">1000</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&quot;DIV被显示&quot;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="toggle"   >
+          <a href="#toggle" class="heading-link"><i class="fas fa-link"></i></a><a href="#toggle" class="headerlink" title="toggle()"></a>toggle()</h4>
+      <p>可以使用toggle()方法在隐藏和显示HTML元素之间进行切换。<br>如果所选元素最初是显示的，那么它将会被隐藏；如果隐藏，那么它将会被显示。</p>
+<p>语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">toggle</span>(duration,easing,callback);</span><br></pre></td></tr></table></div></figure>
+
+<p>三个参数和show()、hide()的一样：</p>
+<ul>
+<li>duration 持续时间</li>
+<li>easing 动画缓动功能</li>
+<li>callback 函数调用</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/19/%E6%B3%95%E6%A3%8D%E5%AD%A6JQuery-1/">法棍学JQuery-1</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-19</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-19</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="JQuery有啥好的"   >
+          <a href="#JQuery有啥好的" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery有啥好的" class="headerlink" title="JQuery有啥好的"></a>JQuery有啥好的</h3>
+      <p>JQuery简化了JavaScript中的许多复杂内容，例如AJAX调用和DOM操作。</p>
+<p>JQuery库包含以下功能：</p>
+<ul>
+<li>HTML &#x2F; DOM操作</li>
+<li>CSS操作</li>
+<li>事件处理</li>
+<li>效果和动画</li>
+<li>AJAX支持</li>
+<li>实用工具(Utilities)</li>
+<li>插件(Plugins)</li>
+<li>跨浏览器支持</li>
+</ul>
+<p>JQuery可以：</p>
+<ul>
+<li>轻松选择元素</li>
+<li>轻松更改元素的样式（CSS）和位置</li>
+<li>轻松操纵DOM元素及其属性</li>
+<li>轻松创建效果，例如显示或隐藏元素，滑动过渡等</li>
+<li>使用更少的代码轻松创建复杂的CSS动画</li>
+<li>轻松地遍历整个DOM树以查找任何元素</li>
+<li>只需一行代码即可轻松地对元素执行多项操作</li>
+<li>轻松获取或设置HTML元素的尺寸</li>
+</ul>
+
+        <h3 id="JQuery入门"   >
+          <a href="#JQuery入门" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery入门" class="headerlink" title="JQuery入门"></a>JQuery入门</h3>
+      
+        <h4 id="JQuery语法"   >
+          <a href="#JQuery语法" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery语法" class="headerlink" title="JQuery语法"></a>JQuery语法</h4>
+      <p>JQ是通过HTML元素选择器进行的，并且对元素执行操作。</p>
+<p>JQuery的基本语法：</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).<span class="title function_">action</span>()</span><br></pre></td></tr></table></div></figure>
+
+<ul>
+<li>$表示JQuery</li>
+<li>(selector)用来查找HTML元素</li>
+<li>action()表示对元素的操作</li>
+</ul>
+<p>JQuery对元素的操作都要等候文档加载完成，因此需要将操作放在<code>文档就绪事件</code>中。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// JQuery方法（DOM就绪时执行）</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
+
+<blockquote>
+<p>如果在完全加载文档之前运行方法，可能会出现一下失败的情况:</p>
+<ul>
+<li>尝试获取未创建的元素</li>
+<li>尝试获取未加载的图像的大小</li>
+</ul>
+</blockquote>
+
+        <h3 id="JQuery选择器"   >
+          <a href="#JQuery选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery选择器" class="headerlink" title="JQuery选择器"></a>JQuery选择器</h3>
+      
+        <h4 id="元素选择器"   >
+          <a href="#元素选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h4>
+      <p>选择标签元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>) <span class="comment">// 选择页面上所有的p标签</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="id选择器"   >
+          <a href="#id选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4>
+      <p>选择指定id的元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#demo&quot;</span>) <span class="comment">// 选择页面上id为demo的标签</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="class选择器"   >
+          <a href="#class选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#class选择器" class="headerlink" title=".class选择器"></a>.class选择器</h4>
+      <p>选择某些个class名下的元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.demo&quot;</span>) <span class="comment">// 选择页面上class名为demo的标签</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="并集选择器"   >
+          <a href="#并集选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h4>
+      <p>选择列举出来的所有元素</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;selector1, selector2, selectorN&quot;</span>) <span class="comment">// 选择页面上被提到的元素</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="其他选择器"   >
+          <a href="#其他选择器" class="heading-link"><i class="fas fa-link"></i></a><a href="#其他选择器" class="headerlink" title="其他选择器"></a>其他选择器</h4>
+      <div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">语法</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$(“*”)</td>
+<td align="left">选择所有元素</td>
+</tr>
+<tr>
+<td align="left">$(this)</td>
+<td align="left">选择当前元素</td>
+</tr>
+<tr>
+<td align="left">$(“p.demo”)</td>
+<td align="left">选择所有带有class&#x3D;”demo”的p元素</td>
+</tr>
+<tr>
+<td align="left">$(“p:first”)</td>
+<td align="left">选择第一个p元素</td>
+</tr>
+<tr>
+<td align="left">$(“div p:first-child”)</td>
+<td align="left">选择每个div元素的第一个p元素</td>
+</tr>
+<tr>
+<td align="left">$(“[target]”)</td>
+<td align="left">选择具有target属性的每个元素</td>
+</tr>
+<tr>
+<td align="left">$(“a[href&#x3D;’&#x2F;CSS3&#x2F;‘]”)</td>
+<td align="left">选择每个a元素的href属性值等于“ &#x2F;CSS3&#x2F;”</td>
+</tr>
+<tr>
+<td align="left">$(“a[href!&#x3D;’&#x2F;CSS3&#x2F;‘]”)</td>
+<td align="left">选择每个a元素的href属性值不等于“ &#x2F;CSS3&#x2F;”</td>
+</tr>
+<tr>
+<td align="left">$(“:text”)</td>
+<td align="left">选择类型为“text”的所有input元素</td>
+</tr>
+<tr>
+<td align="left">$(“tr:even”)</td>
+<td align="left">选择所有偶数tr元素</td>
+</tr>
+<tr>
+<td align="left">$(“tr:odd”)</td>
+<td align="left">选择所有奇数tr元素</td>
+</tr>
+</tbody></table></div>
+
+        <h3 id="JQuery事件方法"   >
+          <a href="#JQuery事件方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#JQuery事件方法" class="headerlink" title="JQuery事件方法"></a>JQuery事件方法</h3>
+      <p>在JQ中，大多数DOM事件具有等效的JQuery方法。</p>
+
+        <h4 id="常用的JQuery事件方法"   >
+          <a href="#常用的JQuery事件方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#常用的JQuery事件方法" class="headerlink" title="常用的JQuery事件方法"></a>常用的JQuery事件方法</h4>
+      
+        <h5 id="document-ready"   >
+          <a href="#document-ready" class="heading-link"><i class="fas fa-link"></i></a><a href="#document-ready" class="headerlink" title="$(document).ready()"></a>$(document).ready()</h5>
+      <p>$(document).ready()方法指定在DOM完全加载时要执行的函数。</p>
+
+        <h5 id="click"   >
+          <a href="#click" class="heading-link"><i class="fas fa-link"></i></a><a href="#click" class="headerlink" title="click()"></a>click()</h5>
+      <p>鼠标左键单击后执行方法，鼠标要按下并且抬起才可触发。</p>
+
+        <h5 id="mouseenter"   >
+          <a href="#mouseenter" class="heading-link"><i class="fas fa-link"></i></a><a href="#mouseenter" class="headerlink" title="mouseenter()"></a>mouseenter()</h5>
+      <p>鼠标指针进入元素时执行方法。</p>
+
+        <h5 id="mouseleave"   >
+          <a href="#mouseleave" class="heading-link"><i class="fas fa-link"></i></a><a href="#mouseleave" class="headerlink" title="mouseleave()"></a>mouseleave()</h5>
+      <p>鼠标离开元素时执行方法。</p>
+
+        <h5 id="mousedown"   >
+          <a href="#mousedown" class="heading-link"><i class="fas fa-link"></i></a><a href="#mousedown" class="headerlink" title="mousedown()"></a>mousedown()</h5>
+      <p>在元素上按下鼠标按钮时执行方法，鼠标按下就会触发，不用抬起。</p>
+
+        <h5 id="mouseup"   >
+          <a href="#mouseup" class="heading-link"><i class="fas fa-link"></i></a><a href="#mouseup" class="headerlink" title="mouseup()"></a>mouseup()</h5>
+      <p>鼠标悬停在元素上并且释放鼠标按钮执行方法。</p>
+
+        <h5 id="keydown"   >
+          <a href="#keydown" class="heading-link"><i class="fas fa-link"></i></a><a href="#keydown" class="headerlink" title="keydown()"></a>keydown()</h5>
+      <p>用户按下键盘上的键时，执行该函数。</p>
+
+        <h5 id="keyup"   >
+          <a href="#keyup" class="heading-link"><i class="fas fa-link"></i></a><a href="#keyup" class="headerlink" title="keyup()"></a>keyup()</h5>
+      <p>用户释放键盘上的键时，执行该函数。</p>
+
+        <h5 id="hover"   >
+          <a href="#hover" class="heading-link"><i class="fas fa-link"></i></a><a href="#hover" class="headerlink" title="hover()"></a>hover()</h5>
+      <p>鼠标指针悬停到元素上方时执行该函数。</p>
+
+        <h4 id="on-方法"   >
+          <a href="#on-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#on-方法" class="headerlink" title="on()方法"></a>on()方法</h4>
+      <p>on()方法可以为所选元素附加一个或多个事件处理程序</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;p&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="variable language_">this</span>).<span class="title function_">css</span>(<span class="string">&quot;background-color&quot;</span>, <span class="string">&quot;coral&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="off-方法"   >
+          <a href="#off-方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#off-方法" class="headerlink" title="off()方法"></a>off()方法</h4>
+      <p>off()方法删除on()方法附带的一个或多个事件处理程序</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;button&quot;</span>).<span class="title function_">click</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  $(<span class="string">&quot;div&quot;</span>).<span class="title function_">off</span>(<span class="string">&quot;mousemove&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="事件对象"   >
+          <a href="#事件对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4>
+      <p>JQuery的事件系统根据W3C标准标准化事件对象。<br>确保将事件对象传递给事件处理程序。<br>每个事件处理函数都会接收一个事件对象，其中包含许多属性和方法。</p>
+<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;div&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">event</span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;Event type is &quot;</span> + event.<span class="property">type</span>);</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;Target : &quot;</span> + event.<span class="property">target</span>.<span class="property">innerHTML</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></div></figure>
+
+<div class="table-container"><table>
+<thead>
+<tr>
+<th align="left">方法&#x2F;属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">event.currentTarget</td>
+<td align="left">事件冒泡阶段中的当前DOM元素</td>
+</tr>
+<tr>
+<td align="left">event.data</td>
+<td align="left">包含绑定当前执行处理程序时传递给事件方法的可选数据</td>
+</tr>
+<tr>
+<td align="left">event.delegateTarget</td>
+<td align="left">返回附加当前调用的jQuery事件处理程序的元素</td>
+</tr>
+<tr>
+<td align="left">event.isDefaultPrevented()</td>
+<td align="left">返回是否event.preventDefault()为事件对象调用</td>
+</tr>
+<tr>
+<td align="left">event.isImmediatePropagationStopped()</td>
+<td align="left">返回是否event.stopImmediatePropagation()为事件对象调用</td>
+</tr>
+<tr>
+<td align="left">event.isPropagationStopped()</td>
+<td align="left">返回是否event.stopPropagation()为事件对象调用</td>
+</tr>
+<tr>
+<td align="left">event.metakey</td>
+<td align="left">表示事件触发时是否按下了META键</td>
+</tr>
+<tr>
+<td align="left">event.namespace</td>
+<td align="left">返回触发事件时指定的名称空间</td>
+</tr>
+<tr>
+<td align="left">event.pageX</td>
+<td align="left">返回鼠标相对于文档左边缘的位置</td>
+</tr>
+<tr>
+<td align="left">event.pageY</td>
+<td align="left">返回相对于文档顶部边缘的鼠标位置</td>
+</tr>
+<tr>
+<td align="left">event.preventDefault()</td>
+<td align="left">阻止浏览器执行所选元素的默认操作</td>
+</tr>
+<tr>
+<td align="left">event.relatedTarget</td>
+<td align="left">返回鼠标移动时要输入或退出的元素</td>
+</tr>
+<tr>
+<td align="left">event.result</td>
+<td align="left">包含由指定事件触发的事件处理程序返回的最后一个&#x2F;上一个值</td>
+</tr>
+<tr>
+<td align="left">event.stopImmediatePropagation()</td>
+<td align="left">防止其他事件处理程序被调用</td>
+</tr>
+<tr>
+<td align="left">event.stopPropagation()</td>
+<td align="left">防止事件使DOM树冒泡，防止任何父处理程序收到该事件的通知</td>
+</tr>
+<tr>
+<td align="left">event.target</td>
+<td align="left">返回哪个DOM元素触发了事件</td>
+</tr>
+<tr>
+<td align="left">event.timeStamp</td>
+<td align="left">返回创建事件的时间（相对于纪元的毫秒数）</td>
+</tr>
+<tr>
+<td align="left">event.type</td>
+<td align="left">返回触发了哪种事件类型</td>
+</tr>
+<tr>
+<td align="left">event.which</td>
+<td align="left">返回事件按下的键盘键或鼠标按钮</td>
+</tr>
+</tbody></table></div>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/14/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-13/">法棍学Vue3-13</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-14</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="transition-group过渡列表"   >
           <a href="#transition-group过渡列表" class="heading-link"><i class="fas fa-link"></i></a><a href="#transition-group过渡列表" class="headerlink" title="transition-group过渡列表"></a>transition-group过渡列表</h3>
       <p>transition是用来过渡单个元素、多个元素中的一个的，如果需要过渡整个列表（对一个div使用v-for）</p>
@@ -150,231 +864,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></he
 <p>teleport经过patch函数创建，判断类型后创建对应的结点元素组件，如果是TELEPORT元素的话就会调用process()，procrss()和remove()进行创建更新和移除的操作；</p>
 <p>to属性的解析会在resolveTarget()中被读取并处理，其中也会读取querySelect 并作处理。</p>
 <p>由于disable的动态值问题，需要有更新操作，更新操作根据前后的disable进行判断和实现</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/13/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-9/">法棍学Vue3-9</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="异步组件、代码分包、suspense"   >
-          <a href="#异步组件、代码分包、suspense" class="heading-link"><i class="fas fa-link"></i></a><a href="#异步组件、代码分包、suspense" class="headerlink" title="异步组件、代码分包、suspense"></a>异步组件、代码分包、suspense</h3>
-      
-        <h4 id="异步组件"   >
-          <a href="#异步组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#异步组件" class="headerlink" title="异步组件"></a>异步组件</h4>
-      <p>在大型应用中，可以通过异步组件将应用分割成小一些的代码块，并且减少主包的体积。</p>
-<p>npm run build 对项目进行打包，生成dist文件夹，看html文件，服务器会先加载html文件，然后加载script标签的js文件（30M左右吧），此时就会出现白屏问题。可以通过异步组件优化白屏问题。</p>
-<p>异步组件引入</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;defineAsyncComponent&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> A = <span class="title function_">defineAsyncComponent</span>(<span class="function">()=&gt;</span><span class="title function_">import</span>(<span class="string">&#x27;组件路径&#x27;</span>))</span><br></pre></td></tr></table></div></figure>
-
-<p>Suspense标签使用</p>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Suspense</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">template</span> #<span class="attr">default</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">A</span>&gt;</span><span class="tag">&lt;/<span class="name">A</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 组件在加载时显示fallback的内容 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">template</span> #<span class="attr">fallback</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span>&gt;</span>loading<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">Suspense</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<p>经过了异步组件的使用后，就会在运行npm run build时，将异步组件的内容单独打包出来。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/13/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-8/">法棍学Vue3-8</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="插槽"   >
-          <a href="#插槽" class="heading-link"><i class="fas fa-link"></i></a><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h3>
-      <p>插槽是子组件中提供给父组件使用的一个占位符，<code>&lt;slot&gt;&lt;/slot&gt;</code>表示，父组件中可以向子组件标签中填充任何模板代码，其内容会被填充至<code>&lt;slot&gt;&lt;/slot&gt;</code>中。</p>
-
-        <h4 id="匿名插槽"   >
-          <a href="#匿名插槽" class="heading-link"><i class="fas fa-link"></i></a><a href="#匿名插槽" class="headerlink" title="匿名插槽"></a>匿名插槽</h4>
-      <ol>
-<li>子组件放置一个插槽</li>
-</ol>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<ol start="2">
-<li>父组件使用插槽</li>
-</ol>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Son</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>114514<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Son</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="具名插槽"   >
-          <a href="#具名插槽" class="heading-link"><i class="fas fa-link"></i></a><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h4>
-      <p>为插槽定义不同的名字</p>
-<ol>
-<li>子组件放置一个插槽</li>
-</ol>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">&quot;header&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">&quot;footer&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<ol start="2">
-<li>父组件使用插槽</li>
-</ol>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Son</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>114514<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:footer</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>1919810<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Son</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 简写 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Son</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> #<span class="attr">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>114514<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> #<span class="attr">footer</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>1919810<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Son</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="作用域插槽"   >
-          <a href="#作用域插槽" class="heading-link"><i class="fas fa-link"></i></a><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h4>
-      <p>作用域插槽可以通过在子组件上进行v-bind将数据传给父组件使用</p>
-<ol>
-<li>子组件放置一个插槽</li>
-</ol>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">slot</span> <span class="attr">:data</span>=<span class="string">&quot;一些数据&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<ol start="2">
-<li>父组件使用插槽</li>
-</ol>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Son</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot</span>=<span class="string">&quot;&#123;data&#125;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;data&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Son</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 简写 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Son</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> #<span class="attr">default</span>=<span class="string">&quot;&#123;data&#125;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;data&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Son</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="动态插槽"   >
-          <a href="#动态插槽" class="heading-link"><i class="fas fa-link"></i></a><a href="#动态插槽" class="headerlink" title="动态插槽"></a>动态插槽</h4>
-      <ol>
-<li>子组件放置一个插槽</li>
-</ol>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">slot</span> #<span class="attr">header</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">slot</span> #<span class="attr">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<ol start="2">
-<li>父组件使用插槽</li>
-</ol>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Son</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> #[<span class="attr">name</span>]&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 动态插槽会根据代码动态命名，填入对应名字的插槽中 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是动态插槽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Son</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;ref&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">let</span> name = <span class="title function_">ref</span>(<span class="string">&#x27;footer&#x27;</span>)</span><br></pre></td></tr></table></div></figure></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/12/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-7/">法棍学Vue3-7</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-12</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="全局组件、局部组件、递归组件、动态组件、异步组件"   >
-          <a href="#全局组件、局部组件、递归组件、动态组件、异步组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#全局组件、局部组件、递归组件、动态组件、异步组件" class="headerlink" title="全局组件、局部组件、递归组件、动态组件、异步组件"></a>全局组件、局部组件、递归组件、动态组件、异步组件</h3>
-      
-        <h4 id="全局组件"   >
-          <a href="#全局组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h4>
-      <p>对于一些出现频率比较高的组件（导航、头脚、表格、按钮、文本框等），可以考虑将其封装为全局组件。</p>
-<p>写好一个组件后，在main.ts中进行注册，使用的时候直接写标签名即可。</p>
-<figure class="highlight typescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.ts main.js</span></span><br><span class="line"><span class="keyword">import</span> 那个组件名 <span class="keyword">from</span> <span class="string">&#x27;路径&#x27;</span></span><br><span class="line"><span class="title function_">createApp</span>(<span class="title class_">App</span>).<span class="title function_">component</span>(<span class="string">&#x27;那个组件名&#x27;</span>,用的时候的组建标签名).<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></div></figure>
-
-
-        <h4 id="局部组件"   >
-          <a href="#局部组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#局部组件" class="headerlink" title="局部组件"></a>局部组件</h4>
-      <p>在一个组件内通过import引入别的组件，那个组件叫局部组件，因为这个组件只能在import它的组件内使用，要是别的组件想用它，就要import。</p>
-
-        <h4 id="递归组件"   >
-          <a href="#递归组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#递归组件" class="headerlink" title="递归组件"></a>递归组件</h4>
-      <p>组件自己使用自己，加上一个条件来借宿递归。</p>
-
-        <h4 id="动态组件"   >
-          <a href="#动态组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h4>
-      <p>让多个组件使用同一个挂载点，并且能够实现动态切换，在挂载点使用component标签，然就使用<code>v-bindLis=&quot;组件&quot;</code></p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> A <span class="keyword">from</span> <span class="string">&#x27;./A.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> B <span class="keyword">from</span> <span class="string">&#x27;./B.vue&#x27;</span></span><br><span class="line"></span><br><span class="line">&lt;component :is=<span class="string">&quot;A&quot;</span>&gt;&lt;/component&gt;</span><br></pre></td></tr></table></div></figure>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/12/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-6/">法棍学Vue3-6</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-12</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="父子组件的传参"   >
-          <a href="#父子组件的传参" class="heading-link"><i class="fas fa-link"></i></a><a href="#父子组件的传参" class="headerlink" title="父子组件的传参"></a>父子组件的传参</h3>
-      
-        <h4 id="父-gt-子"   >
-          <a href="#父-gt-子" class="heading-link"><i class="fas fa-link"></i></a><a href="#父-gt-子" class="headerlink" title="父-&gt;子"></a>父-&gt;子</h4>
-      <p>父组件通过<code>v-bind</code>给子组件绑定一个数据（字符串值不用v-bind），然后子组件通过defineProps接收传过来的值</p>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Son</span> <span class="attr">:arr</span>=<span class="string">&quot;[1,2,3]&quot;</span> <span class="attr">:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Son</span>&gt;</span>    </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子组件</span></span><br><span class="line"><span class="keyword">const</span> props = <span class="title function_">defineProps</span>(&#123;</span><br><span class="line">    <span class="attr">title</span>:&#123;</span><br><span class="line">        <span class="attr">type</span>:<span class="title class_">String</span>,</span><br><span class="line">        <span class="attr">default</span>:<span class="string">&quot;默认值&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">arr</span>:&#123;</span><br><span class="line">        <span class="attr">type</span>:<span class="title class_">Object</span>,</span><br><span class="line">        <span class="attr">default</span>:<span class="string">&quot;[]&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 值可以直接在模板中使用，但要在代码中使用要接收一下</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(props.<span class="property">title</span>)</span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight typescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子组件</span></span><br><span class="line"><span class="comment">// TS泛型接收</span></span><br><span class="line"><span class="comment">// TS设置默认值用withDefaults</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="keyword">const</span> props = defineProps&lt;&#123;</span><br><span class="line">    <span class="attr">title</span>:<span class="built_in">string</span>,</span><br><span class="line">    <span class="attr">arr</span>:<span class="built_in">number</span>[]</span><br><span class="line">&#125;&gt;()</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="title function_">withDefaults</span>(defineProps&lt;&#123;</span><br><span class="line">    <span class="attr">title</span>:<span class="built_in">string</span>,</span><br><span class="line">    <span class="attr">arr</span>:<span class="built_in">number</span>[]</span><br><span class="line">&#125;&gt;(),&#123;</span><br><span class="line">    <span class="attr">arr</span>:<span class="function">()=&gt;</span>[<span class="number">666</span>] <span class="comment">// 复杂数据类型要用函数防止引用</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 值可以直接在模板中使用，但要在代码中使用要接收一下</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(props.<span class="property">title</span>)</span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="子-gt-父"   >
-          <a href="#子-gt-父" class="heading-link"><i class="fas fa-link"></i></a><a href="#子-gt-父" class="headerlink" title="子-&gt;父"></a>子-&gt;父</h4>
-      <p>子组件emit触发父组件所监听的事件</p>
-<p>js写法</p>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;send&quot;</span>&gt;</span>给父组件传值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cosnt emit = <span class="title function_">defineEmits</span>([<span class="string">&#x27;on-click&#x27;</span>])</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">send</span> = (<span class="params"></span>)=&gt;&#123;</span><br><span class="line">    <span class="title function_">emit</span>(<span class="string">&#x27;on-click&#x27;</span>,<span class="string">&#x27;给父组件传的值&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Son</span> @<span class="attr">on-click</span>=<span class="string">&quot;getName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Son</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">getName</span> = (<span class="params">name:string</span>)=&gt;&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<p>ts写法</p>
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;send&quot;</span>&gt;</span>给父组件传值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-<figure class="highlight typescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cosnt emit = defineEmits&lt;&#123;</span><br><span class="line">    (<span class="attr">e</span>:<span class="string">&quot;on-click&quot;</span>,<span class="attr">anme</span>:<span class="built_in">string</span>):<span class="built_in">void</span></span><br><span class="line">    <span class="comment">// (e:&quot;on-click&quot;,anme:string):void,</span></span><br><span class="line">    <span class="comment">// (e:&quot;on-click&quot;,anme:string):void,</span></span><br><span class="line">    <span class="comment">// (e:&quot;on-click&quot;,anme:string):void,</span></span><br><span class="line">&#125;&gt;()</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">send</span> = (<span class="params"></span>)=&gt;&#123;</span><br><span class="line">    <span class="title function_">emit</span>(<span class="string">&#x27;on-click&#x27;</span>,<span class="string">&#x27;给父组件传的值&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight html"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Son</span> @<span class="attr">on-click</span>=<span class="string">&quot;getName&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Son</span>&gt;</span></span><br></pre></td></tr></table></div></figure>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">getName</span> = (<span class="params">name:string</span>)=&gt;&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-        <h4 id="向父组件暴露一些值"   >
-          <a href="#向父组件暴露一些值" class="heading-link"><i class="fas fa-link"></i></a><a href="#向父组件暴露一些值" class="headerlink" title="向父组件暴露一些值"></a>向父组件暴露一些值</h4>
-      <p>ElementUI的form表单中暴露的方法就是这样暴露的</p>
-<figure class="highlight typescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子组件</span></span><br><span class="line"><span class="title function_">defineExpose</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;法棍&quot;</span>,</span><br><span class="line">    <span class="attr">open</span>:<span class="function">()=&gt;</span><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">123</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></div></figure>
-<figure class="highlight typescript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件</span></span><br><span class="line">&lt;<span class="title class_">SonVue</span> ref=<span class="string">&quot;Son&quot;</span>&gt;&lt;/<span class="title class_">SonVue</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Son</span> = ref&lt;<span class="title class_">InstanceType</span>&lt;<span class="keyword">typeof</span> <span class="title class_">SonVue</span>&gt;&gt;()</span><br><span class="line"></span><br><span class="line"><span class="title class_">Son</span>.<span class="property">value</span>.<span class="property">name</span></span><br><span class="line"><span class="title class_">Son</span>.<span class="property">value</span>.<span class="title function_">open</span>()</span><br></pre></td></tr></table></div></figure></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/11/Vue%E5%B0%8F%E5%AF%84%E5%B7%A7/">Vue小寄巧</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-11</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-12</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="根据路由记录动态生成面包屑内容"   >
-          <a href="#根据路由记录动态生成面包屑内容" class="heading-link"><i class="fas fa-link"></i></a><a href="#根据路由记录动态生成面包屑内容" class="headerlink" title="根据路由记录动态生成面包屑内容"></a>根据路由记录动态生成面包屑内容</h3>
-      <p>思路：通过router中的route数组中配置好的meta原数据中的title(也可以是其他变量名)获取当前路径名字。</p>
-<p>this.$router可以在引入了路由插件后在全局获取，this.$router中有matched属性能够获取当前路由的匹配信息，当用户进行了路由跳转后，matched中会有对应的路径跳转顺序的meta信息，只需要v-for遍历matched中的数据，获取meta中提前写好的信息即可。</p>
-<p>会出现matched获取到不应该出现的路由名称，可以对matched进行裁剪</p>
-
-        <h3 id="Vuex状态持久化"   >
-          <a href="#Vuex状态持久化" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vuex状态持久化" class="headerlink" title="Vuex状态持久化"></a>Vuex状态持久化</h3>
-      <p>当时写东西的时候提前知道了Vuex会在页面刷新后格式化的情况，因此在mounted中就写好了加载数据的方法，每次刷新挂载组件的时候就会调用，因此没看出有Vuex丢失数据的情况。</p>
-<p>解决方法：使用storage缓存数据，每次数据在mutations中改变时，就进行一次缓存，记得存缓存要存JSON字符串，用stringify()对数据进行处理。</p>
-<p>记得，假如用了storage缓存去保证Vuex状态持久化，那么就要保证每次修改状态后要立刻进行缓存，并且在每次开始时就将缓存中的数据赋给state，也就是所谓的将Vuex的state与storage保持同步。</p>
-
-        <h3 id="实现星星（字面意义）组件（动态类名的计算使用）"   >
-          <a href="#实现星星（字面意义）组件（动态类名的计算使用）" class="heading-link"><i class="fas fa-link"></i></a><a href="#实现星星（字面意义）组件（动态类名的计算使用）" class="headerlink" title="实现星星（字面意义）组件（动态类名的计算使用）"></a>实现星星（字面意义）组件（动态类名的计算使用）</h3>
-      <p>要求：<br>星星可以根据某些操作，实现显示上的区别：全星、半星、空星·······</p>
-<p>思路：</p>
-<ol>
-<li>通过data中的某个数组去保存星星的class，再用:calss遍历附上去</li>
-<li>data中只有一个score，可以通过计算属性，对score进行整数小数划分，先将score进行*2后向下取整再&#x2F;2，然后对这个分数分离整数和小数，整数用Math.floor()，小数用<code>小数=socre%1!==0</code>获取，然后遍历整数将星值塞入数组后返回。</li>
-</ol>
-
-        <h3 id="调用子组件方法"   >
-          <a href="#调用子组件方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#调用子组件方法" class="headerlink" title="调用子组件方法"></a>调用子组件方法</h3>
-      <p>要求：<br>在父组件上触发事件，调用子组件的方法。</p>
-<p>实现：<br>在父组件使用子组件时，给子组件标签一个ref属性，此时父组件可以通过this.$refs.ref属性的变量名，此时可以获取到这个子组件的组件实例，也就可以调用其中的方法。</p>
-
-        <h3 id="请求转发"   >
-          <a href="#请求转发" class="heading-link"><i class="fas fa-link"></i></a><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h3>
-      <p>要求：<br>Vuecli启动的服务器是在8080，请求往往会发生跨域错误，需要进行请求转发</p>
-<p>思路:<br>在vue.config.js中添加代码：</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">devServer</span>:&#123;</span><br><span class="line">        <span class="attr">proxy</span>:&#123;</span><br><span class="line">            <span class="string">&#x27;/api&#x27;</span>:&#123; <span class="comment">// 当发送请求时发现请求路径上有/api时就转发到下面的地址</span></span><br><span class="line">                <span class="attr">target</span>:<span class="string">&#x27;你要转发的地址&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="按钮组件处理点击事件"   >
-          <a href="#按钮组件处理点击事件" class="heading-link"><i class="fas fa-link"></i></a><a href="#按钮组件处理点击事件" class="headerlink" title="按钮组件处理点击事件"></a>按钮组件处理点击事件</h3>
-      <p>在组件标签上进行@click绑定，然后在按钮组件内部的按钮上写上@click点击事件，并且赋予回调函数，回调函数的功能是派发一个click</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=<span class="string">&quot;随便一个名字&quot;</span>&gt;子组件的按钮&lt;/button&gt;</span><br><span class="line"></span><br><span class="line"><span class="attr">methods</span>:&#123;</span><br><span class="line">    上面的那个名字()&#123;</span><br><span class="line">        <span class="variable language_">this</span>.$emit(<span class="string">&#x27;click&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="按钮组件的文案和样式"   >
-          <a href="#按钮组件的文案和样式" class="heading-link"><i class="fas fa-link"></i></a><a href="#按钮组件的文案和样式" class="headerlink" title="按钮组件的文案和样式"></a>按钮组件的文案和样式</h3>
-      <p>要求：<br>使用按钮组件的时候，能够获取到组件标签中的内容，通过type设置按钮的样式效果</p>
-<p>实现：<br>获取组件标签中的内容可以用插槽获取，type的传入实际上是传入了prop，可以在子组件中接收这个type，然后提前写好样式，再再button上通过:class动态添加样式</p>
-
-        <h3 id="封装axios-GET请求"   >
-          <a href="#封装axios-GET请求" class="heading-link"><i class="fas fa-link"></i></a><a href="#封装axios-GET请求" class="headerlink" title="封装axios GET请求"></a>封装axios GET请求</h3>
-      <p>axios是一个封装库，在写项目时会进行axios的二次封装</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// request.js</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">get</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span>(<span class="params">params</span>)&#123; <span class="comment">// 柯里化</span></span><br><span class="line">        <span class="comment">// 接收参数</span></span><br><span class="line">        <span class="keyword">return</span> axios.<span class="title function_">get</span>(url,&#123;params&#125;)</span><br><span class="line">            .<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="comment">// 请求结果存放在res.data中</span></span><br><span class="line">                <span class="keyword">const</span> &#123;</span><br><span class="line">                    errno,</span><br><span class="line">                    data</span><br><span class="line">                &#125; = res.<span class="property">data</span></span><br><span class="line">                <span class="keyword">if</span>(errno === <span class="variable constant_">ERR_OK</span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> data</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .<span class="title function_">catch</span>(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="comment">// 捕获报错</span></span><br><span class="line">            &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// api.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;get&#125; <span class="keyword">from</span> <span class="string">&#x27;./request.js&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getBlogList = <span class="title function_">get</span>(<span class="string">&#x27;/api/blog/list&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> getBlogDetail = <span class="title function_">get</span>(<span class="string">&#x27;/api/blog/detail&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line">    getBlogList,</span><br><span class="line">    getBlogDetail</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用时</span></span><br><span class="line"><span class="title function_">getBlogList</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="title function_">getBlogList</span>().<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">result</span> = res</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">getBlogDetail</span>(<span class="params">id</span>)&#123;</span><br><span class="line">    <span class="title function_">getBlogDetail</span>(&#123;</span><br><span class="line">        id</span><br><span class="line">    &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">result</span> = res</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="set定义响应式数据"   >
-          <a href="#set定义响应式数据" class="heading-link"><i class="fas fa-link"></i></a><a href="#set定义响应式数据" class="headerlink" title="$set定义响应式数据"></a>$set定义响应式数据</h3>
-      <p>对于对象中没有的属性，可以通过$set添加并附上响应式(Vue2.0)</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">person</span>:&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;法棍&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!<span class="variable language_">this</span>.<span class="property">person</span>.<span class="property">age</span>)&#123;</span><br><span class="line">    <span class="comment">// this.person.age = 20 没有响应式</span></span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="variable language_">this</span>.<span class="property">person</span>,<span class="string">&#x27;age&#x27;</span>,<span class="number">20</span>) <span class="comment">// 对象增加字段并且设置响应式</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">person</span>.<span class="property">age</span>++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="计算属性setter的使用"   >
-          <a href="#计算属性setter的使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#计算属性setter的使用" class="headerlink" title="计算属性setter的使用"></a>计算属性setter的使用</h3>
-      <p>计算属性的简写方式的功能只能做到获取、计算产生某一个值，但不能设置</p>
-<figure class="highlight javascript"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line">    <span class="title function_">selectedLabel</span>(<span class="params"></span>)&#123; <span class="comment">// 简写</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">tabs</span>[<span class="variable language_">this</span>.<span class="property">index</span>].<span class="property">label</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">selectedLabel</span>:&#123;</span><br><span class="line">        <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">tabs</span>[<span class="variable language_">this</span>.<span class="property">index</span>].<span class="property">label</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="title function_">set</span>(<span class="params">newVal</span>)&#123;</span><br><span class="line">            <span class="comment">// console.log(&#x27;newVal&#x27;,newVal)</span></span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">index</span> = <span class="variable language_">this</span>.<span class="property">tabs</span>.<span class="title function_">findIndex</span>(<span class="function"><span class="params">tab</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> tab.<span class="property">label</span> === newVal</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
-
-
-        <h3 id="组件中的v-model"   >
-          <a href="#组件中的v-model" class="heading-link"><i class="fas fa-link"></i></a><a href="#组件中的v-model" class="headerlink" title="组件中的v-model"></a>组件中的v-model</h3>
-      <p>在组件标签中写的v-model，相当于写了一个v-bind和v-on，也就是监听了一个事件，同时设置了一个值。</p>
-<p>在组件中就能够通过触发这个事件，回传相应的值</p>
-
-        <h3 id="如何避免直接修改prop"   >
-          <a href="#如何避免直接修改prop" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何避免直接修改prop" class="headerlink" title="如何避免直接修改prop"></a>如何避免直接修改prop</h3>
-      <p>这里的prop是指父子组件之间的prop，要用props配置项接收的prop。</p>
-<p>出现该问题的情形：子组件修改来自父组件的数据</p>
-<p>解决思路：子组件$emit一个事件，父组件在子组件标签上@监听这个事件，父组件再根据emit回传的数据，执行相应的方法，在父组件上进行更新数据。</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/10/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-5/">法棍学Vue3--5</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-10</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="组件和生命周期"   >
-          <a href="#组件和生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#组件和生命周期" class="headerlink" title="组件和生命周期"></a>组件和生命周期</h3>
-      
-        <h4 id="组件"   >
-          <a href="#组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#组件" class="headerlink" title="组件"></a>组件</h4>
-      <p>在Vue3中，组件通过import后可以直接在模板使用，不用像Vue2一样进行一个Component的引。</p>
-
-        <h4 id="生命周期"   >
-          <a href="#生命周期" class="heading-link"><i class="fas fa-link"></i></a><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4>
-      <p>记住mounted后才能操作DOM就行了</p>
-<p>源码位置：package&#x2F;runtime-core&#x2F;src&#x2F;apiLifecycle.ts 93行</p>
-<p>可以看到这些on钩子函数都调用了createHook，并且传入的参数都是生命周期钩子对应的枚举</p>
-<p>createHook用了函数柯里化进行了封装，然后调用injectHook，创建了一个缓存，将Hook放入缓存，进行依赖的收集，若组件卸载了，就return，否则就停止收集依赖</p>
-<p>然后在renderer.ts文件的1307行进行一个挂载更新。</p>
-
-        <h3 id="没啥好写的，就写一下less和scoped吧"   >
-          <a href="#没啥好写的，就写一下less和scoped吧" class="heading-link"><i class="fas fa-link"></i></a><a href="#没啥好写的，就写一下less和scoped吧" class="headerlink" title="没啥好写的，就写一下less和scoped吧"></a>没啥好写的，就写一下less和scoped吧</h3>
-      <figure class="highlight dos"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install less less-loader -D</span><br></pre></td></tr></table></div></figure>
-
-<p>less是css预处理语言，要先安装less和lessloader才行</p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">8</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">31</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">38</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
