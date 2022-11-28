@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/icon/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="Vue组件间通信的分类        父子组件之间的通信 兄弟组件之间的通信 祖孙与后代组件之间的通信 非关系组件之间的通信                       组件间通信的方案       常规的通信方案有8种  props传参 $emit触发自定义事件 ref获取某一结点 EventBus $parent或$root attrs与listener">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/icon/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/icon/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="Vue组件间通信的分类        父子组件之间的通信 兄弟组件之间的通信 祖孙与后代组件之间的通信 非关系组件之间的通信                                       组件间通信的方案       常规的通信方案有8种  props传参 $emit触发自定义事件 ref获取某一结点 EventBus $parent或$roo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue组件间通信">
 <meta property="og:url" content="https://onlyaaandat.github.io/2022/09/23/Vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/index.html">
 <meta property="og:site_name" content="法棍">
-<meta property="og:description" content="Vue组件间通信的分类        父子组件之间的通信 兄弟组件之间的通信 祖孙与后代组件之间的通信 非关系组件之间的通信                       组件间通信的方案       常规的通信方案有8种  props传参 $emit触发自定义事件 ref获取某一结点 EventBus $parent或$root attrs与listener">
+<meta property="og:description" content="Vue组件间通信的分类        父子组件之间的通信 兄弟组件之间的通信 祖孙与后代组件之间的通信 非关系组件之间的通信                                       组件间通信的方案       常规的通信方案有8种  props传参 $emit触发自定义事件 ref获取某一结点 EventBus $parent或$roo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://static.vue-js.com/85b92400-3aca-11eb-ab90-d9ae814b240d.png">
 <meta property="og:image" content="https://static.vue-js.com/fa207cd0-3aca-11eb-ab90-d9ae814b240d.png">
@@ -23,12 +23,12 @@ var CONFIG = {
   postWidget: {"endText":true},
   nightMode: {"enable":true},
   back2top: {"enable":true},
-  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  codeblock: {"style":"carbon","highlight":"light","wordWrap":false},
   reward: false,
   fancybox: false,
   zoomImage: {"gapAside":"20px"},
   galleryWaterfall: undefined,
-  lazyload: false,
+  lazyload: true,
   pjax: undefined,
   externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
   shortcuts: undefined,
@@ -45,7 +45,10 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></he
 <li>祖孙与后代组件之间的通信</li>
 <li>非关系组件之间的通信</li>
 </ul>
-<p><img src="https://static.vue-js.com/85b92400-3aca-11eb-ab90-d9ae814b240d.png" alt="tree"></p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://static.vue-js.com/85b92400-3aca-11eb-ab90-d9ae814b240d.png"  alt="tree">
+      </p>
 
         <h3 id="组件间通信的方案"   >
           <a href="#组件间通信的方案" class="heading-link"><i class="fas fa-link"></i></a><a href="#组件间通信的方案" class="headerlink" title="组件间通信的方案"></a>组件间通信的方案</h3>
@@ -158,7 +161,10 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></he
 <li>适用场景：复杂关系的组件数据传递</li>
 <li>Vuex相当于一个用来存储共享变量的容器</li>
 </ul>
-<p><img src="https://static.vue-js.com/fa207cd0-3aca-11eb-ab90-d9ae814b240d.png" alt="Vuex"></p>
+<p>
+        <img   class="lazyload lazyload-gif"
+          src="/images/loading.svg" data-src="https://static.vue-js.com/fa207cd0-3aca-11eb-ab90-d9ae814b240d.png"  alt="Vuex">
+      </p>
 <ul>
 <li><code>state</code>用来存放共享变量的地方</li>
 <li><code>getter</code>相当于<code>store</code>中的计算属性，用来获得共享变量的值</li>
@@ -176,4 +182,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></he
           $parent或$root</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#attrs%E4%B8%8E-listeners"><span class="toc-number">2.6.</span> <span class="toc-text">
           $attrs与$listeners</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Provide%E4%B8%8Einject"><span class="toc-number">2.7.</span> <span class="toc-text">
           Provide与inject</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vuex"><span class="toc-number">2.8.</span> <span class="toc-text">
-          Vuex</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">39</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">阅读进度 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+          Vuex</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">39</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">阅读进度 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
