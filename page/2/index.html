@@ -28,7 +28,20 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/13/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-9/">法棍学Vue3-9</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/14/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-10/">法棍学Vue3-10</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-14</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-14</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="Teleport传送组件"   >
+          <a href="#Teleport传送组件" class="heading-link"><i class="fas fa-link"></i></a><a href="#Teleport传送组件" class="headerlink" title="Teleport传送组件"></a>Teleport传送组件</h3>
+      <p>Vue3新特性之一，Teleport能够将模板渲染到指定的DOM结点，不会受到父级的style、v-show等属性的影响，但data、prop数据依旧能够共用的技术，类似于React的Protal。</p>
+<p>主要解决的问题：<br>因为Teleport节点挂载在其他指定的DOM节点下，完全不受父级style样式（通常是父级的定位引起）的影响</p>
+<p>使用方法：<br>to可以接收常用的选择器；<br>通过to属性插入指定元素位置 <code>to=&quot;body&quot;</code>便可以将Teleport内容传送到指定位置；<br>还有:disabal&#x3D;”true&#x2F;false”属性动态地决定to属性是否生效，true为不生效。</p>
+
+        <h3 id="源码"   >
+          <a href="#源码" class="heading-link"><i class="fas fa-link"></i></a><a href="#源码" class="headerlink" title="源码"></a>源码</h3>
+      <p>位置：packages&gt;runtime-core&gt;src&gt;render.ts&gt;baseCreateRenderer&gt;patch</p>
+<p>teleport经过patch函数创建，判断类型后创建对应的结点元素组件，如果是TELEPORT元素的话就会调用process()，procrss()和remove()进行创建更新和移除的操作；</p>
+<p>to属性的解析会在resolveTarget()中被读取并处理，其中也会读取querySelect 并作处理。</p>
+<p>由于disable的动态值问题，需要有更新操作，更新操作根据前后的disable进行判断和实现</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/11/13/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-9/">法棍学Vue3-9</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-11-13</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h3 id="异步组件、代码分包、suspense"   >
           <a href="#异步组件、代码分包、suspense" class="heading-link"><i class="fas fa-link"></i></a><a href="#异步组件、代码分包、suspense" class="headerlink" title="异步组件、代码分包、suspense"></a>异步组件、代码分包、suspense</h3>
       
@@ -395,144 +408,4 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"></he
           <a href="#reactive源码" class="heading-link"><i class="fas fa-link"></i></a><a href="#reactive源码" class="headerlink" title="reactive源码"></a>reactive源码</h4>
       <p>位置：packages\reactivity\src\reactive.ts 89行</p>
 <p>经过了泛型的筛选后，进入reactive函数的createReactiveObject进行进一步的操作，createReactiveObject中有一系列的判断，然后通过判断之后new Proxy</p>
-</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/07/%E6%B3%95%E6%A3%8D%E5%AD%A6Vue3-1/">法棍学Vue3-1</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-11-13</span></span></div></header><div class="post-body"><div class="post-excerpt">
-        <h3 id="Vue3和Vue2的区别"   >
-          <a href="#Vue3和Vue2的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#Vue3和Vue2的区别" class="headerlink" title="Vue3和Vue2的区别"></a>Vue3和Vue2的区别</h3>
-      
-        <h4 id="Composition-API"   >
-          <a href="#Composition-API" class="heading-link"><i class="fas fa-link"></i></a><a href="#Composition-API" class="headerlink" title="Composition API"></a>Composition API</h4>
-      <p>组合式API区别于Vue2的选项式API，组合式API可以将代码的逻辑写在一起，对于某一项功能的具体实现更加清晰，不用像<code>Options API</code>一样data、methods到处翻，必要的时候也可以写成自定义hooks来实现某一项功能的封装。</p>
-<p>由setup引导的：</p>
-<ul>
-<li>ref</li>
-<li>reactive</li>
-<li>watch</li>
-<li>computed</li>
-<li>toRefs</li>
-<li>toRaws</li>
-</ul>
-
-        <h4 id="双向数据绑定的重写"   >
-          <a href="#双向数据绑定的重写" class="heading-link"><i class="fas fa-link"></i></a><a href="#双向数据绑定的重写" class="headerlink" title="双向数据绑定的重写"></a>双向数据绑定的重写</h4>
-      <p>双向数据绑定是指Model和View之间的相互作用，并不是那个v-model。<br>Vue2是用Object.defineProperty()实现的<br>Vue3是用Proxy实现的</p>
-<p>proxy与Object.defineProperty(obj,prop,desc)的方式相比有以下优势：</p>
-<ol>
-<li>丢掉了备份数据</li>
-<li>省去了 for in 循环</li>
-<li>能够监听数组的变化</li>
-<li>代码简化</li>
-<li>可以监听动态新增的属性</li>
-<li>可以监听删除的属性</li>
-<li>可以监听数组的索引和length属性</li>
-</ol>
-<p>Vue2源码位置：<br>Object.defineProperty(obj,prop,desc):src\core\observer\index.js 157行<br>数组方法重写：src\core\observer\array.js</p>
-<p>Vue3源码位置：<br>packages\reactivity\src\reactive.ts 220行</p>
-
-        <h4 id="VDOM性能的瓶颈"   >
-          <a href="#VDOM性能的瓶颈" class="heading-link"><i class="fas fa-link"></i></a><a href="#VDOM性能的瓶颈" class="headerlink" title="VDOM性能的瓶颈"></a>VDOM性能的瓶颈</h4>
-      <p>patch flag优化静态树</p>
-<p>在Vue2中，每次更新diff，都是全量对比，Vue3则只对比带有标记的，减少了非动态内容的对比消耗。</p>
-<p>Vue3的虚拟dom会在上面生成一些标记，这些标记会标记结点上的动态内容，包括但不限于内部的文本结点、结点上的属性等，再将其参与比较。</p>
-
-        <h4 id="Fragments"   >
-          <a href="#Fragments" class="heading-link"><i class="fas fa-link"></i></a><a href="#Fragments" class="headerlink" title="Fragments"></a>Fragments</h4>
-      <p>绿皮书的212页，Fragments(片段)是一种新增的VDOM类型，<code>type:Fragments</code>。渲染器在渲染类型为Fragments的虚拟结点时，会忽略Fragments结点本身，然后去渲染它的children结点，看源码可以看到大致的思路是：如果虚拟结点不存在，就挂载Fragments的子结点，如果虚拟结点存在，就更新Fragments的子结点。</p>
-<p>Vue3支持多个根节点。</p>
-<p>Vue2在之前是不可以在一个模板template中写入多个根节点的，往往是用一个div什么的套一下再往里写东西。Vue3则可以在template中写入多个根节点。</p>
-<p>底层原理是增加了一个虚拟结点，这个虚拟结点不会做渲染。</p>
-<p>同时支持render JSX写法，类似react。</p>
-<p>增加了两个内置组件：</p>
-<ul>
-<li>Suspenset</li>
-<li>eleport</li>
-</ul>
-<p>以及多v-model的用法</p>
-
-        <h4 id="Tree-Shaking的支持"   >
-          <a href="#Tree-Shaking的支持" class="heading-link"><i class="fas fa-link"></i></a><a href="#Tree-Shaking的支持" class="headerlink" title="Tree-Shaking的支持"></a>Tree-Shaking的支持</h4>
-      <p>在保持代码可用的情况下，尽可能地去除无用代码。</p>
-<p>Vue2中无论使用什么功能，代码都会出现在生产代码中，主要原因是：Vue实例在项目中是单例的，捆绑程序无法检测到该对象中的那些属性在代码中被使用。<br>Vue3引入了树摇，将全局API进行分块。如果不使用某项功能，那么他们就不会包含在基础包中。</p>
-
-        <h3 id="虚拟DOM和diff算法"   >
-          <a href="#虚拟DOM和diff算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#虚拟DOM和diff算法" class="headerlink" title="虚拟DOM和diff算法"></a>虚拟DOM和diff算法</h3>
-      
-        <h4 id="虚拟DOM"   >
-          <a href="#虚拟DOM" class="heading-link"><i class="fas fa-link"></i></a><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h4>
-      <p>Vue3源码位置 packages\runtime-core\src\renderer.ts 1600行左右的patchXXX函数</p>
-<p>虚拟DOM本质上是一个对象，或者说，是一个抽象语法树，树中有许多结点，经过<code>渲染器renderer</code>的渲染，能够把虚拟DOM渲染成特定平台的真实元素。而在浏览器平台上，虚拟DOM经过renderer渲染，就会成为真实的DOM元素。</p>
-<p>另外虚拟DOM的引入是因为真实DOM上拥有许多属性，这也导致直接操作真实DOM会带来巨大的性能消耗，而引入了虚拟DOM之后，操作真实DOM的性能消耗转换为了操作虚拟DOM的性能消耗+渲染虚拟DOM的性能消耗，由于虚拟DOM是由JS实现的，JS的计算性能引起的性能消耗比操作真实DOM的性能消耗要小很多，因此选择虚拟DOM。</p>
-
-        <h4 id="diff算法"   >
-          <a href="#diff算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#diff算法" class="headerlink" title="diff算法"></a>diff算法</h4>
-      <p>有大致3种diff算法:</p>
-<ol>
-<li>简单diff算法</li>
-<li>双端diff算法</li>
-<li>快速diff算法</li>
-</ol>
-<ul>
-<li><p>Vue2用的是双端diff算法。</p>
-</li>
-<li><p>Vue3的diff算法是快速diff算法的改进。</p>
-</li>
-<li><p>当diff算法没有key时，使用的是循环遍历并且覆盖的方案</p>
-</li>
-<li><p>当diff算法有key时，使用的是尽可能地复用的方案</p>
-</li>
-</ul>
-<hr>
-<p>快速diff算法中包含了预处理步骤，预处理步骤中，对于相同(虚拟结点类型和key相同)的<code>前置结点</code>和<code>后置结点</code>(前序对比算法、尾序对比算法，homo特有的造词)，往往不会去动他们，而是在他们身上打上补丁，直到key不同为止。</p>
-<p>待前序对比算法和尾序对比算法结束后，会得到两组索引：</p>
-<ul>
-<li>一组是j（先管他叫j），j来自前序对比算法，新旧结点共用一个j索引，j最后得出的结果就是前序出现不同结点的索引位置。</li>
-<li>另一组是newEnd和oldEnd，来自尾序对比算法，newEnd和oldEnd也一样，往新旧两个队列的队头开始比较，key相同则往前走一位，最后会停留在出现不同的那个结点上。</li>
-</ul>
-<p>这两组索引会引出新增结点和卸载结点的判定：</p>
-<ol>
-<li>oldEnd &lt; j 成立：说明所有旧子节点都处理完毕</li>
-<li>newEnd &gt;&#x3D; j 成立：说明在新子节点中仍有未被处理（未被遍历到）的结点，这些结点将会被视为<code>新增结点</code></li>
-</ol>
-<p>如果两个判定同时成立，就说明在新节点中的遗留结点中，都是新增结点。也就是j到newEnd中的所有结点。</p>
-<p>同样，对于删除结点的判定，也是通过这两组索引的关系进行判定的：</p>
-<ol>
-<li>newEnd &lt; j 成立：说明所有新子节点都处理完毕</li>
-<li>oldEnd &gt;&#x3D; j成立：说明在旧子节点中仍有未被处理（未被遍历到）的结点，这些结点将会被视为<code>卸载结点</code></li>
-</ol>
-<hr>
-<p><strong>还没完</strong></p>
-<hr>
-<p>以上只是快速diff算法的预处理，剩下的就是对<code>结点移动</code>的判定了。<br>无论是简单diff算法、双端diff算法还是快速diff算法，都遵循这同样的处理原则：</p>
-<ul>
-<li>判断是否有结点需要移动，以及应该如何移动</li>
-<li>找出那些需要被添加或者移除的结点</li>
-</ul>
-<p>显然，如果中间有需要移动的结点，那么前序和尾序中安安稳稳地得出所有新增结点或者卸载结点的两个判定都不会成立，那么就要新开一个else去处理这种情况，也就是移动结点。</p>
-<blockquote>
-<p>思路：构造一个数组source，它的长度等于<code>新子节点</code>在经过预处理之后剩余的未处理节点的数量，并且source中的没个元素的初始值都是-1</p>
-</blockquote>
-<p>先说说source是干啥的吧，source数组中的每一个元素分别与新的一组子节点中剩余的未处理节点对应。source用于存储或者说标记新节点队列中的结点在旧节点队列中的位置索引，后面将会使用source计算出一个最长递增子序列，辅助完成DOM的移动操作。</p>
-<p>至于source怎么去找旧索引，别问，问就是两层for循环对着key摁找。<br>不过要是追求效率，可以为新节点队列构建一张索引表，存储 结点的key:结点位置索引 之间的映射。</p>
-<p>在有了映射表后，就可以用两个拆开的for循环完成以上操作，一个for循环对着新节点队列建表，第二个for循环对着旧节点队列每一个未处理节点的key在表中查它们在新节点队列中的索引（这里表达有点问题，找新队列的索引是为了对应source的下标）。</p>
-<p>在处理过程中，会出现几种情况：</p>
-<ol>
-<li>表中查到了，说明结点是可复用的，后续会对其打补丁然后填充索引到source中</li>
-<li>表中查不到，说明结点不存在了，后续会调用卸载结点相关的函数</li>
-</ol>
-<hr>
-<p>source完成后，剩下的就是判断结点是否需要移动了。快速diff算法判断结点是否需要移动的方法与简单diff算法类似：</p>
-<p>但在这之前需要先进行处理，把一些不需要更新的元素删掉</p>
-<p>新增两个变量：moved和pos。</p>
-<p>moved的初始值为false，表示是否需要移动结点<br>pos的初始值为0，表示遍历就得一组子节点的过程中遇到的最大索引值k</p>
-<blockquote>
-<p>如果在遍历过程中遇到的索引值呈现递增趋势，则说明不需要移动结点，反之则需要。</p>
-</blockquote>
-<p>另外还需要一个数量标识，表示已经更新过的节点数量。已经更新过的节点数量应该小于新子节点队列中需要更新的节点数量。也就是说source有多长，就只能更新多少节点。遍历旧节点的时候先加上这个数量标识，能够排除掉一些需要被删除的乱序节点。</p>
-<p>经过以上几个变量的折腾，实现了两个目标：</p>
-<ol>
-<li>通过moved配合pos判断出一个DOM是否应该移动</li>
-<li>构建source数组</li>
-</ol>
-<p>有了source就可以根据最长递增子序列进行移动了。看书吧，太长了，大致就是得到了一个最长递增子序列，其元素为最长递增子序列在source中的索引，然后用两个索引s和i从seq的尾部和新节点队列的尾部。</p>
-<p>然后向前遍历，遍历的是新节点队列那边，也就是i，i往前遍历的时候会看source那边对应的是不是-1，是的话就新增，然后看i是否等于seq[s]，等于就要移动，不等就不用动，因为seq中标记的那个最长子串就是新节点队列中不用动的那堆节点。</p>
-<p>Vue3源码： 295页</p>
-</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">38</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/icon/android-chrome-512x512.png" alt="avatar"></div><p class="sidebar-ov-author__text">法棍</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/onlyAAandAT" target="_blank" rel="noopener"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span><span class="sidebar-ov-social-item__text">github</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">39</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">9</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">32</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div>然然可爱捏</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
