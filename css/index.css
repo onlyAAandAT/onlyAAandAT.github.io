@@ -2650,3 +2650,6 @@ html.nightmode {
   --color-gray-100: #fcfcfa;
   --color-gray-900: #1f212f;
 }
+html {
+  filter: grayscale(90%);
+}
