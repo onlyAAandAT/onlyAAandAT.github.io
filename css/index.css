@@ -2651,5 +2651,6 @@ html.nightmode {
   --color-gray-900: #1f212f;
 }
 html {
-  filter: grayscale(90%);
+  filter: grayscale(85%) saturate(80%);
+  -webkit-filter: grayscale(0.85) saturate(0.8);
 }
