@@ -625,6 +625,22 @@ body::after {
   z-index: -2;
   background: url("/body/body4.jpg") no-repeat center/cover;
 }
+body::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  height: 100vh;
+  z-index: -1;
+  background-color: rgba(0,0,0,0.1);
+}
+.nightmode body::before {
+  background-color: rgba(0,0,0,0.6);
+}
 .container {
   white-space: normal;
   word-wrap: break-word;
@@ -2649,8 +2665,4 @@ html.nightmode {
 :root {
   --color-gray-100: #fcfcfa;
   --color-gray-900: #1f212f;
-}
-html {
-  filter: grayscale(85%) saturate(80%);
-  -webkit-filter: grayscale(0.85) saturate(0.8);
 }
